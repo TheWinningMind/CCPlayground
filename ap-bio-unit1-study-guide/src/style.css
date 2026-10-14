@@ -1,0 +1,147 @@
+/* Print interior for Amazon KDP: 8.5" x 11" trim, no bleed, black & white.
+   Mirrored margins: the larger margin is always on the binding (gutter) side. */
+
+@page {
+  size: 8.5in 11in;
+  margin: 0.75in 0.65in 0.8in 0.85in;
+  @bottom-right { content: counter(page); font: 600 9pt Inter, sans-serif; color: #333; }
+  @top-right { content: "AP\00AE  Biology \2022  Unit 1: Chemistry of Life"; font: 500 7.5pt Inter, sans-serif; color: #777; letter-spacing: 0.06em; text-transform: uppercase; }
+}
+@page :left {
+  margin: 0.75in 0.85in 0.8in 0.65in;
+  @bottom-right { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: counter(page); font: 600 9pt Inter, sans-serif; color: #333; }
+  @top-left { content: "Comprehensive Study Guide"; font: 500 7.5pt Inter, sans-serif; color: #777; letter-spacing: 0.06em; text-transform: uppercase; }
+}
+@page plain {
+  @top-right { content: none; } @top-left { content: none; }
+  @bottom-right { content: none; } @bottom-left { content: none; }
+}
+@page opener {
+  @top-right { content: none; } @top-left { content: none; }
+}
+
+:root {
+  --ink: #111;
+  --muted: #555;
+  --rule: #999;
+  --tint: #ececec;
+  --tint2: #f6f6f6;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: Caladea, "Liberation Serif", serif;
+  font-size: 10.6pt;
+  line-height: 1.42;
+  orphans: 3; widows: 3;
+  hyphens: auto;
+}
+
+h1, h2, h3, h4, .sans { font-family: Inter, sans-serif; }
+h1 { font-size: 24pt; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 0.15in; line-height: 1.12; }
+h2 { font-size: 14pt; font-weight: 750; margin: 0.24in 0 0.08in; padding-bottom: 3pt; border-bottom: 1.2pt solid var(--ink); break-after: avoid; }
+h3 { font-size: 11.2pt; font-weight: 700; margin: 0.17in 0 0.05in; break-after: avoid; }
+h4 { font-size: 9.8pt; font-weight: 700; margin: 0.12in 0 0.03in; break-after: avoid; text-transform: uppercase; letter-spacing: 0.05em; }
+p { margin: 0 0 0.075in; text-align: justify; }
+ul, ol { margin: 0.02in 0 0.09in; padding-left: 0.26in; }
+li { margin-bottom: 0.03in; }
+strong { font-weight: 700; }
+sub, sup { font-size: 70%; line-height: 0; }
+.prime { font-family: "DejaVu Serif", serif; }
+
+/* ---------- Title + front matter ---------- */
+.title-page { page: plain; height: 9.3in; display: flex; flex-direction: column; justify-content: space-between; break-after: page; }
+.title-page .kicker { font: 700 10pt Inter; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+.title-page .big { font: 900 54pt/0.98 Inter; letter-spacing: -0.02em; margin: 0.18in 0 0.1in; }
+.title-page .sub { font: 600 19pt/1.25 Inter; color: #333; }
+.title-page .rule { height: 6pt; background: var(--ink); width: 1.6in; margin: 0.3in 0; }
+.title-page .feat { font: 500 11pt/1.6 Inter; color: #333; }
+.title-page .author { font: 700 13pt Inter; letter-spacing: 0.04em; }
+
+.copyright { page: plain; font-size: 9pt; line-height: 1.5; color: #222; display: flex; flex-direction: column; justify-content: flex-end; height: 9.3in; break-after: page; }
+.copyright p { text-align: left; margin-bottom: 0.1in; }
+
+.toc { break-after: page; }
+.toc ol { list-style: none; padding: 0; margin: 0; }
+.toc li { display: flex; align-items: baseline; font-family: Inter, sans-serif; font-size: 10.5pt; margin: 0 0 6pt; }
+.toc li.part { font-weight: 800; margin-top: 12pt; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
+.toc li.sub { padding-left: 0.3in; font-size: 10pt; color: #222; }
+.toc .dots { flex: 1; border-bottom: 1pt dotted #888; margin: 0 6pt; transform: translateY(-3pt); }
+.toc .pg { font-weight: 700; min-width: 0.3in; text-align: right; }
+
+/* ---------- Chapter openers ---------- */
+.opener { break-before: page; }
+.opener .num { font: 900 64pt/1 Inter; color: #ddd; letter-spacing: -0.03em; margin-top: -0.1in; }
+.opener .eyebrow { font: 700 9pt Inter; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-top: 0.05in; }
+.opener h1 { margin-top: 0.04in; }
+.section-start { break-before: page; }
+
+/* ---------- Boxes ---------- */
+.box { border: 1pt solid var(--ink); padding: 0.1in 0.14in 0.06in; margin: 0.12in 0 0.14in; break-inside: avoid; border-radius: 3pt; }
+.box > .label { font: 800 8pt Inter; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4pt; display: flex; align-items: center; gap: 6pt; }
+.box > .label::before { content: ""; width: 9pt; height: 9pt; background: var(--ink); display: inline-block; }
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0.04in; }
+.box.targets { background: var(--tint); border: none; }
+.box.tip > .label::before { border-radius: 50%; }
+.box.warn { border-width: 1pt 1pt 1pt 5pt; }
+.box.warn > .label::before { transform: rotate(45deg); width: 7pt; height: 7pt; }
+.box.big { background: var(--tint2); }
+.box.math { border-style: dashed; }
+
+/* ---------- Tables ---------- */
+table { width: 100%; border-collapse: collapse; margin: 0.08in 0 0.14in; font-size: 9.4pt; line-height: 1.32; break-inside: auto; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th { font: 700 8.4pt Inter; text-transform: uppercase; letter-spacing: 0.05em; text-align: left; background: var(--ink); color: #fff; padding: 4pt 6pt; }
+td { border-bottom: 0.6pt solid var(--rule); padding: 4pt 6pt; vertical-align: top; }
+tbody tr:nth-child(even) td { background: var(--tint2); }
+td:first-child { font-weight: 700; }
+table.plain td:first-child { font-weight: normal; }
+
+/* ---------- Figures ---------- */
+figure { margin: 0.12in 0 0.16in; break-inside: avoid; text-align: center; }
+figure svg { max-width: 100%; height: auto; }
+figcaption { font: 500 8.4pt/1.35 Inter; color: #333; margin-top: 4pt; text-align: left; }
+figcaption b { font-weight: 800; }
+svg text { font-family: Inter, sans-serif; }
+
+/* ---------- Two columns, vocab ---------- */
+.cols { columns: 2; column-gap: 0.28in; }
+.cols > * { break-inside: avoid; }
+.cols > dl.vocab { break-inside: auto; }
+dl.vocab dt + dd { break-before: avoid; }
+dl.vocab { margin: 0.05in 0 0.1in; }
+dl.vocab dt { font: 700 9.6pt Inter; margin-top: 5pt; break-after: avoid; }
+dl.vocab dd { margin: 0 0 0 0.12in; font-size: 9.8pt; }
+
+/* ---------- Practice questions ---------- */
+.quiz { counter-reset: q; }
+.q { break-inside: avoid; margin: 0 0 0.13in; padding-left: 0.3in; position: relative; }
+.q::before { counter-increment: q; content: counter(q) "."; position: absolute; left: 0; font: 800 10pt Inter; }
+.q .stem { margin-bottom: 3pt; text-align: left; }
+.q ol.ch { list-style: none; padding-left: 0; margin: 0; counter-reset: ch; }
+.q ol.ch li { padding-left: 0.26in; position: relative; margin-bottom: 1.5pt; }
+.q ol.ch li::before { counter-increment: ch; content: "(" counter(ch, upper-alpha) ")"; position: absolute; left: 0; font: 600 9pt Inter; top: 1pt; }
+.answers .a { margin-bottom: 0.08in; break-inside: avoid; text-align: left; }
+.answers .a b.k { font-family: Inter, sans-serif; }
+.write { border-bottom: 0.6pt solid #aaa; height: 0.3in; }
+.frq-part { margin: 0.05in 0 0.05in 0.2in; }
+.pts { font: 700 8pt Inter; color: var(--muted); }
+
+.cheat { font-size: 9.2pt; line-height: 1.3; }
+.cheat h3 { margin-top: 0.08in; font-size: 10pt; }
+.cheat p, .cheat li { text-align: left; }
+.cheat .cols { column-gap: 0.22in; }
+.small { font-size: 9pt; }
+.center { text-align: center; }
+.pb { break-before: page; }
+.avoid { break-inside: avoid; }
+.check { font-family: "DejaVu Sans", sans-serif; }
+.tracker td { height: 0.28in; }
+.tracker td:nth-child(n+2) { text-align: center; font-family: "DejaVu Sans"; font-size: 11pt; font-weight: normal; }
