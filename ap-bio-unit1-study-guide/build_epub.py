@@ -32,6 +32,8 @@ REWORDS = [
      "Construct</strong> an appropriately labeled graph of the data, including error bars, on graph paper."),
     ("Record each attempt. Redo any set",
      "Copy this table into a notebook and record each attempt. Redo any set"),
+    ("Fill in each box from memory, then check your work against the lessons on water and the elements of life.",
+     "Draw it on paper with six branches&mdash;Polarity, Hydrogen Bonds, Cohesion &amp; Adhesion, Heat Properties, Water as a Solvent, and CHNOPS&mdash;then check your work against the lessons."),
     ("Check each statement only when you can do it without notes.",
      "Check off each statement (in a notebook) only when you can do it without notes."),
 ]
@@ -83,6 +85,14 @@ dl.vocab dd { margin: 0 0 0 1em; }
 .a { margin-bottom: 0.6em; }
 .pts { font-family: sans-serif; font-size: 0.8em; color: #555; }
 .frq-part { margin: 0.6em 0; }
+.mm-box { border: 1px solid #000; padding: 0.4em 0.6em; margin: 0.6em 0; }
+.mm-box h4 { margin: 0 0 0.3em; }
+.mm-box ul { margin: 0; padding-left: 1.2em; }
+.mm-hub { font-family: sans-serif; font-weight: bold; font-size: 1.2em; text-align: center; border: 2px solid #000; padding: 0.5em; margin: 0.8em 0; }
+.mm-hub small { display: block; font-weight: normal; font-size: 0.75em; }
+.mm-foot { font-family: sans-serif; font-weight: bold; text-align: center; margin: 0.8em 0; }
+.wq { margin: 0 0 0.6em; }
+.wai-key p { margin: 0 0 0.2em; }
 .title-block { text-align: center; margin-top: 3em; }
 .title-block .big { font-family: sans-serif; font-size: 2.4em; font-weight: bold; line-height: 1.1; margin: 0.3em 0; }
 .title-block .sub { font-family: sans-serif; font-size: 1.15em; margin: 0.5em 0 1.5em; }
@@ -163,6 +173,16 @@ def strip_print_only(soup):
         fig.decompose()
     for el in soup.select(".check"):
         el.decompose()
+    # The blank "build your own" mind map is a print-only worksheet; its intro is reworded below.
+    for el in soup.select(".mm-blank"):
+        el.decompose()
+    # Kindle reads top to bottom: put each mind map's center topic before its branches.
+    for grid in soup.select(".mm-grid"):
+        hub = grid.select_one(".mm-hub")
+        if hub:
+            grid.insert_before(hub.extract())
+    for el in soup.select(".blank"):
+        el.replace_with("__________")
     for el in soup.select("[style]"):
         del el["style"]
 
@@ -214,7 +234,7 @@ def build():
     part_of = {
         "Structure of Water and Hydrogen Bonding": "Part 1: The Lessons",
         "Science Practices and Free-Response Strategy": "Part 2: Skills and Review",
-        "Section I: Multiple Choice": "Part 3: Practice Test",
+        "Section I: Multiple Choice": "Part 3: Practice",
         "Answers: Check Your Understanding": "Part 4: Answers and Reference",
     }
     n = 0
@@ -230,6 +250,9 @@ def build():
             continue
         title = section_title(sec)
         if not title:
+            # Sections without their own heading (e.g. each mind map page) continue the previous chapter.
+            fname_prev, title_prev, body_prev, part_prev = chapters[-1]
+            chapters[-1] = (fname_prev, title_prev, body_prev + "\n" + str(sec), part_prev)
             continue
         n += 1
         fname = f"{slug_for.get(title, f'ch{n:02d}')}.xhtml"
