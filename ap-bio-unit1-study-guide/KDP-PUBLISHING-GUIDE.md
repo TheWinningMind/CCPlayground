@@ -4,9 +4,10 @@
 
 | File | Use |
 |---|---|
-| `output/AP-Biology-Unit-1-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 56 pages, 8.5" x 11", no bleed, black & white, fonts embedded. |
-| `output/AP-Biology-Unit-1-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full wrap with 0.125" bleed. The spine is sized for 56 pages on white paper. |
+| `output/AP-Biology-Unit-1-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 73 pages, 8.5" x 11", no bleed, black & white, fonts embedded. |
+| `output/AP-Biology-Unit-1-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full wrap with 0.125" bleed. The spine is sized for 73 pages on white paper. |
 | `src/` | Editable source (HTML/CSS) for every chapter and the cover. |
+| `extra-materials/` | Your original mind map and Who Am I? Word files. The book uses rewritten, corrected versions of them; these originals are kept for reference only. |
 | `output/AP-Biology-Unit-1-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, validated with EPUBCheck (0 errors, 0 warnings). |
 | `output/AP-Biology-Unit-1-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (1979 x 2561 px JPG). |
 | `build_epub.py` | Rebuilds the eBook and its cover: `python3 build_epub.py` (run `build.py` first). |
@@ -29,7 +30,7 @@
 
 **Title:** AP Biology Unit 1: Chemistry of Life
 
-**Subtitle:** The Comprehensive Study Guide with Lessons, Diagrams, 58 Practice Questions, Free-Response Practice, and Full Answer Explanations
+**Subtitle:** The Comprehensive Study Guide with Lessons, Mind Maps, 230+ Practice Questions, Free-Response Practice, and Full Answer Explanations
 
 **Author:** (match the name on the cover)
 
@@ -42,8 +43,10 @@
 > **Inside you'll find:**
 > - Focused lessons on all six Unit 1 topics: water and hydrogen bonding, elements of life, building and breaking macromolecules, carbohydrates, lipids, proteins, and nucleic acids
 > - Annotated diagrams you can learn to draw from memory
+> - Four one-page mind maps summarizing carbohydrates, lipids, proteins, and nucleic acids
 > - Learning targets, misconception alerts, and exam tips for every topic
 > - 58 original multiple-choice questions, each with a full explanation
+> - 175 "Who Am I?" vocabulary questions with a complete answer key
 > - Three free-response questions with point-by-point scoring guidelines
 > - A guide to AP task verbs (identify, describe, explain, justify) and the claim–evidence–reasoning method
 > - A master comparison of the four macromolecules, a one-page review sheet, a glossary, and a score tracker
@@ -85,7 +88,7 @@ Use the **same title, subtitle, author, description, keywords, and categories** 
 - **DRM:** your choice.
 - **AI-generated content:** answer the same way as for the paperback.
 - **Preview:** use KDP's online **Kindle Previewer** after you upload. Check the diagrams, tables, and the clickable table of contents on both a phone and a tablet view.
-- **Price and royalty:** KDP's 70% royalty applies to list prices from **$2.99 to $9.99** (in the US). The 35% option covers other prices. Study guides often sell for **$4.99–$7.99** as eBooks. KDP shows your royalty on the pricing screen; it subtracts a small delivery fee based on file size (this eBook is about 0.5 MB).
+- **Price and royalty:** KDP's 70% royalty applies to list prices from **$2.99 to $9.99** (in the US). The 35% option covers other prices. Study guides often sell for **$4.99–$7.99** as eBooks. KDP shows your royalty on the pricing screen; it subtracts a small delivery fee based on file size (this eBook is about 0.7 MB).
 - **KDP Select (optional):** enrolling makes the eBook available in Kindle Unlimited, but the eBook must then be sold only on Amazon. The paperback is not affected.
 
-**How the eBook differs from the paperback:** text reflows to fit any screen size, diagrams are images, and each Check Your Understanding set ends with a link to its answers. Write-in lines and the blank graph grid are replaced with instructions to use separate paper or graph paper. The Score Tracker asks readers to copy the table into a notebook.
+**How the eBook differs from the paperback:** text reflows to fit any screen size, diagrams are images, and each Check Your Understanding set ends with a link to its answers. Write-in lines, the blank graph grid, and the blank "build your own" mind map are replaced with instructions to use separate paper or graph paper. The Score Tracker asks readers to copy the table into a notebook.
