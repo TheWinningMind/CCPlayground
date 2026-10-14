@@ -85,7 +85,7 @@ Use the **same title, subtitle, author, description, keywords, and categories** 
 - **DRM:** your choice.
 - **AI-generated content:** answer the same way as for the paperback.
 - **Preview:** use KDP's online **Kindle Previewer** after you upload. Check the diagrams, tables, and the clickable table of contents on both a phone and a tablet view.
-- **Price and royalty:** KDP's 70% royalty applies to list prices from **$2.99 to $9.99** (in the US). The 35% option covers other prices. Study guides often sell for **$4.99–$7.99** as eBooks. KDP shows your royalty on the pricing screen; it subtracts a small delivery fee based on file size (this eBook is about 1 MB).
+- **Price and royalty:** KDP's 70% royalty applies to list prices from **$2.99 to $9.99** (in the US). The 35% option covers other prices. Study guides often sell for **$4.99–$7.99** as eBooks. KDP shows your royalty on the pricing screen; it subtracts a small delivery fee based on file size (this eBook is about 0.5 MB).
 - **KDP Select (optional):** enrolling makes the eBook available in Kindle Unlimited, but the eBook must then be sold only on Amazon. The paperback is not affected.
 
 **How the eBook differs from the paperback:** text reflows to fit any screen size, diagrams are images, and each Check Your Understanding set ends with a link to its answers. Write-in lines and the blank graph grid are replaced with instructions to use separate paper or graph paper. The Score Tracker asks readers to copy the table into a notebook.
