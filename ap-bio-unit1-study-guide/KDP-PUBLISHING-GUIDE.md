@@ -7,6 +7,9 @@
 | `output/AP-Biology-Unit-1-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 56 pages, 8.5" x 11", no bleed, black & white, fonts embedded. |
 | `output/AP-Biology-Unit-1-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full wrap with 0.125" bleed. The spine is sized for 56 pages on white paper. |
 | `src/` | Editable source (HTML/CSS) for every chapter and the cover. |
+| `output/AP-Biology-Unit-1-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, validated with EPUBCheck (0 errors, 0 warnings). |
+| `output/AP-Biology-Unit-1-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (1979 x 2561 px JPG). |
+| `build_epub.py` | Rebuilds the eBook and its cover: `python3 build_epub.py` (run `build.py` first). |
 | `build.py` | Rebuilds both PDFs: `python3 build.py`. To set the author/publisher name, run `GUIDE_AUTHOR="Your Name" python3 build.py`. |
 
 > **Before you upload:** the author name is set to **"DAVID SREERAMA"**. If you want to publish under your own name or a different pen name, rebuild with `GUIDE_AUTHOR`. The cover's spine width depends on page count, so **always rebuild the cover after you edit the content**. `build.py` does this automatically.
@@ -71,4 +74,18 @@
 2. **Trademark.** "AP" and "Advanced Placement" are College Board trademarks. Using them to describe what the book covers is common practice. The copyright page and back cover include the required non-affiliation disclaimer. Do **not** use the College Board logo, and don't call the questions "official."
 3. **Check against the current CED.** The content follows the six standard Unit 1 topics (1.1–1.6). Before publishing, compare the topic list with the College Board's current *AP Biology Course and Exam Description*, and ideally have a biology teacher proofread the book.
 4. **Order a proof copy** (KDP > "Request printed proofs") before you publish, so you can check print quality and margins.
-5. **Kindle eBook (optional).** A fixed-layout PDF does not convert well to Kindle. If you also want an eBook, the next step would be a reflowable EPUB built from the same `src/` content.
+
+## Kindle eBook setup (KDP > Create > Kindle eBook)
+
+Use the **same title, subtitle, author, description, keywords, and categories** as the paperback. KDP then links the two formats on one product page.
+
+- **Manuscript:** upload `AP-Biology-Unit-1-Study-Guide-Kindle.epub`.
+- **Cover:** "Upload a cover you already have" and choose `AP-Biology-Unit-1-Study-Guide-Kindle-Cover.jpg`.
+- **ISBN:** not required for Kindle eBooks. Leave it blank.
+- **DRM:** your choice.
+- **AI-generated content:** answer the same way as for the paperback.
+- **Preview:** use KDP's online **Kindle Previewer** after you upload. Check the diagrams, tables, and the clickable table of contents on both a phone and a tablet view.
+- **Price and royalty:** KDP's 70% royalty applies to list prices from **$2.99 to $9.99** (in the US). The 35% option covers other prices. Study guides often sell for **$4.99–$7.99** as eBooks. KDP shows your royalty on the pricing screen; it subtracts a small delivery fee based on file size (this eBook is about 1 MB).
+- **KDP Select (optional):** enrolling makes the eBook available in Kindle Unlimited, but the eBook must then be sold only on Amazon. The paperback is not affected.
+
+**How the eBook differs from the paperback:** text reflows to fit any screen size, diagrams are images, and each Check Your Understanding set ends with a link to its answers. Write-in lines and the blank graph grid are replaced with instructions to use separate paper or graph paper. The Score Tracker asks readers to copy the table into a notebook.
