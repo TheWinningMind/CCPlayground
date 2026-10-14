@@ -17,7 +17,7 @@ SRC = ROOT / "src"
 OUT = ROOT / "output"
 BUILD = ROOT / ".build"
 
-AUTHOR = os.environ.get("GUIDE_AUTHOR", "The Winning Mind")
+AUTHOR = os.environ.get("GUIDE_AUTHOR", "DAVID SREERAMA")
 YEAR = os.environ.get("GUIDE_YEAR", "2026")
 
 # KDP paperback, black ink on white paper: spine width = pages x 0.002252 in.

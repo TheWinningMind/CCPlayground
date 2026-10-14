@@ -9,7 +9,7 @@
 | `src/` | Editable source (HTML/CSS) for every chapter and the cover. |
 | `build.py` | Rebuilds both PDFs: `python3 build.py`. To set the author/publisher name, run `GUIDE_AUTHOR="Your Name" python3 build.py`. |
 
-> **Before you upload:** the author name is set to **"The Winning Mind"**. If you want to publish under your own name or a different pen name, rebuild with `GUIDE_AUTHOR`. The cover's spine width depends on page count, so **always rebuild the cover after you edit the content**. `build.py` does this automatically.
+> **Before you upload:** the author name is set to **"DAVID SREERAMA"**. If you want to publish under your own name or a different pen name, rebuild with `GUIDE_AUTHOR`. The cover's spine width depends on page count, so **always rebuild the cover after you edit the content**. `build.py` does this automatically.
 
 ## Paperback setup (KDP > Create > Paperback)
 
