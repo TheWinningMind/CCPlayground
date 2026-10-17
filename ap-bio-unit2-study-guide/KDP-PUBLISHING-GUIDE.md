@@ -10,7 +10,7 @@
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
 | `images/` | Put AI-generated images here. Any slot without an image keeps the built-in 3D illustration. |
-| `src/` | Editable source (HTML/CSS) for every chapter and the cover. `src/defs.svg` holds the shared 3D shading used by all illustrations. |
+| `src/` | Editable source (HTML/CSS) for every chapter and the cover. The cover title font, Lilita One, is bundled in `src/fonts/` under the SIL Open Font License, which allows commercial use. `src/defs.svg` holds the shared 3D shading used by all illustrations. |
 | `build.py` | Rebuilds both PDFs: `python3 build.py`. To set the author/publisher name: `GUIDE_AUTHOR="Your Name" python3 build.py`. |
 | `build_epub.py` | Rebuilds the eBook and its cover: `python3 build_epub.py` (run `build.py` first). |
 

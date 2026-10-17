@@ -137,6 +137,7 @@ def build_cover(pages: int) -> None:
     out = (tpl.replace("{{W}}", f"{width:.4f}").replace("{{H}}", f"{height:.4f}")
               .replace("{{SPINE}}", f"{spine:.4f}").replace("{{BLEED}}", f"{BLEED}")
               .replace("{{TRIM_W}}", f"{TRIM_W}").replace("{{AUTHOR}}", html.escape(AUTHOR))
+              .replace("{{FONTS}}", (SRC / "fonts").resolve().as_uri())
               .replace("{{SPINE_TEXT}}", "" if pages < 100 else "block"))
     out = swap_ai_images(out)
     p = BUILD / "cover.html"

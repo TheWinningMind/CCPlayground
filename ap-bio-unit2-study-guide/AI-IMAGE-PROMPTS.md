@@ -22,7 +22,7 @@ The book already includes 3D-shaded illustrations of every organelle, so it is c
 
 | Slot | Aspect ratio | Minimum size | Background |
 |---|---|---|---|
-| `cover-cell` | about 1.4 : 1 (landscape) | 2400 × 1700 px | Solid deep royal blue `#1d2a8f`, so it blends into the cover |
+| `cover-cell` | about 1.4 : 1 (landscape) | 2400 × 1700 px | Solid warm peach `#ffe6d6`, so it blends into the cover |
 | All organelle cards | 4 : 3 (landscape) | 1200 × 900 px | Soft white-to-light-gray gradient |
 
 - **Print interior is black and white.** The paperback interior is set up for KDP's black-and-white printing (the cheapest option), so color images print in grayscale there. Choose images with strong light and dark contrast. Images stay in full color in the Kindle eBook and on the cover. If you want a color paperback interior, choose KDP's "Standard color" or "Premium color" ink when setting up the book. Nothing in the files needs to change, but the printing cost per copy is much higher.
@@ -39,7 +39,7 @@ Highly detailed 3D render, scientific educational illustration, glossy semi-tran
 
 | File name | Prompt | Must show (check accuracy) |
 |---|---|---|
-| `cover-cell` | A 3D cutaway of a eukaryotic animal cell, shown as a rounded slab viewed from above at a 30° angle, a quarter of the cell cut open to reveal the interior; a large purple nucleus with nucleolus, blue folded rough endoplasmic reticulum dotted with ribosomes, teal stacked Golgi apparatus with budding vesicles, orange capsule-shaped mitochondria with visible cristae, small green lysosomes, yellow vesicles, pink glossy cell membrane rim; isolated on a solid deep royal blue background (#1d2a8f). | No cell wall, no chloroplasts, no large central vacuole (it is an *animal* cell) |
+| `cover-cell` | A 3D cutaway of a spherical eukaryotic animal cell with a wedge removed, showing a green outer membrane rind, a yellow cytoplasm back wall and floor; a large purple nucleus with nucleolus, blue folded rough endoplasmic reticulum dotted with ribosomes, teal stacked Golgi apparatus with budding vesicles, orange capsule-shaped mitochondria with visible cristae, small green lysosomes, yellow vesicles, pink glossy cell membrane rim; isolated on a solid warm peach background (#ffe6d6). | No cell wall, no chloroplasts, no large central vacuole (it is an *animal* cell) |
 | `nucleus` | A 3D sphere-shaped cell nucleus with a wedge cut away, showing a double nuclear envelope studded with nuclear pores, coiled purple chromatin inside, and a dense magenta nucleolus. | Double membrane, pores, nucleolus |
 | `ribosome` | A 3D ribosome with a large purple subunit sitting on a smaller orange subunit, a thin yellow mRNA strand threaded between them, and a short chain of beads (polypeptide) emerging from the top. | Two unequal subunits, no membrane |
 | `rough-er` | A 3D stack of flattened, gently curved blue membrane sheets (cisternae) connected at the edges, the surfaces dotted with many small dark ribosomes. | Flattened sacs, ribosomes on the outside |
