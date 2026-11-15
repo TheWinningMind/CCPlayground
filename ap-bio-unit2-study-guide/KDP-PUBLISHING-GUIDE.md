@@ -19,7 +19,7 @@
 ## What's in the book
 
 - **Front matter:** title page, copyright and trademark notice, contents, How to Use This Guide (with a four-week study plan), and Unit 2 at a Glance.
-- **Part 1, The Lessons:** all eleven Unit 2 topics (2.1–2.11), each with learning targets, step-by-step explanations, misconception alerts, exam tips, key terms, and a Check Your Understanding set. Also included:
+- **Part 1, The Lessons:** all ten Unit 2 topics (2.1–2.10, current Fall 2025 numbering), each with learning targets, step-by-step explanations, misconception alerts, exam tips, key terms, and a Check Your Understanding set. Also included:
   - A labeled 3D animal cell, plant cell, and prokaryotic cell
   - A **3D Organelle Gallery** with 14 cards (structure, function, and which cells have it)
   - Worked examples for SA:V ratios and water potential
@@ -56,7 +56,7 @@
 > Unit 2 is where biology becomes cellular. This guide shows you what every organelle does, why cells stay small, how the fluid mosaic membrane controls what enters and leaves, how water moves by osmosis, and how compartments and endosymbiosis shaped the eukaryotic cell. Each idea is explained step by step, followed by the practice you need to answer exam-style questions with confidence.
 >
 > **Inside you'll find:**
-> - Clear lessons on all eleven Unit 2 topics, from subcellular components to the origins of compartmentalization
+> - Clear lessons on all ten Unit 2 topics, from cell structure to the origins of compartmentalization
 > - A 3D Organelle Gallery and labeled 3D cutaways of animal, plant, and bacterial cells
 > - Step-by-step worked examples for surface area-to-volume ratio and water potential
 > - Diagrams of the secretory pathway, fluid mosaic model, passive and active transport, the sodium–potassium pump, tonicity, endocytosis, and endosymbiosis
@@ -91,7 +91,7 @@
 
 1. **AI-generated content disclosure.** KDP asks whether the text, images, or translations are AI-generated. The text was drafted with AI assistance, so answer that honestly. If you add AI-generated images from `AI-IMAGE-PROMPTS.md`, also answer **yes** for images. KDP requires the disclosure, and it isn't shown to customers.
 2. **Trademark.** "AP" and "Advanced Placement" are College Board trademarks. Using them to describe what the book covers is common practice. The copyright page and back cover include the non-affiliation disclaimer. Do **not** use the College Board logo, and don't call the questions "official."
-3. **Check against the current CED.** The content follows the eleven standard Unit 2 topics (2.1–2.11). Before publishing, compare them with the College Board's current *AP Biology Course and Exam Description*, and ideally have a biology teacher proofread the book.
+3. **Check against the current CED.** The content follows the ten Unit 2 topics (2.1–2.10) of the Course and Exam Description effective Fall 2025. Before publishing, compare them with the College Board's current *AP Biology Course and Exam Description*, and ideally have a biology teacher proofread the book.
 4. **Order a proof copy** (KDP > "Request printed proofs") to check print quality, especially how the 3D illustrations look in grayscale.
 
 ## Kindle eBook setup (KDP > Create > Kindle eBook)

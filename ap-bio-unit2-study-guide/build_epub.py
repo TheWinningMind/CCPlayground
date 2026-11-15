@@ -252,7 +252,7 @@ def build():
         "Answers: Practice Test 2": "answers-test2",
     }
     part_of = {
-        "Cell Structure: Subcellular Components": "Part 1: The Lessons",
+        "Cell Structure and Function": "Part 1: The Lessons",
         "Science Practices and Unit 2 Math": "Part 2: Skills and Review",
         "Practice Test 1: Multiple Choice": "Part 3: Practice",
         "Answers: Check Your Understanding": "Part 4: Answers and Reference",
