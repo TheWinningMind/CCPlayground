@@ -12,15 +12,19 @@
   .panel { position: absolute; top: 0; height: {{H}}in; overflow: hidden; }
   .back { left: 0; width: calc({{BLEED}}in + {{TRIM_W}}in); padding: 0.8in 0.7in 0.6in calc({{BLEED}}in + 0.6in); }
   .spine { left: calc({{BLEED}}in + {{TRIM_W}}in); width: {{SPINE}}in; background: var(--plum); }
-  .front { right: 0; width: calc({{BLEED}}in + {{TRIM_W}}in); }
+  .front { right: 0; width: calc({{BLEED}}in + {{TRIM_W}}in);
+            background: radial-gradient(circle at 50% 67.5%, rgba(255,255,255,0.95) 0, rgba(255,255,255,0.65) 17%, rgba(255,255,255,0) 34%),
+                        linear-gradient(180deg, #ffefe5 0%, #ffdccb 55%, #ffbea6 100%); }
   .spine-text { display: none; display: {{SPINE_TEXT}}; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; color: #fff; font: 400 12pt "Lilita One"; letter-spacing: 0.06em; }
 
   /* Decorative dots echoing the organelle colors. */
-  .dots { position: absolute; inset: 0; }
   /* Front: Unit 1-style title block, then the cutaway cell, badges, and a tilted author tag. */
   .title { position: absolute; left: 0.6in; right: calc({{BLEED}}in + 0.6in); top: 0.7in; text-align: center; }
   .kicker { display: inline-block; font: 800 14pt Inter; letter-spacing: 0.32em; color: #fff; background: var(--coral); padding: 0.07in 0.2in 0.07in 0.27in; border-radius: 0.3in; }
-  .unit { font: 400 104pt/0.92 "Lilita One"; color: var(--magenta); margin-top: 0.12in; text-shadow: 0 0.05in 0 #7a145033; }
+  .ribbon { display: block; width: 4.6in; margin: 0.12in auto 0; }
+  .shadow { position: absolute; left: 50%; transform: translateX(-50%); bottom: 1.12in; width: 4.2in; height: 0.42in; border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(122,20,80,0.32) 0, rgba(122,20,80,0) 70%); }
+  .orbit { position: absolute; inset: 0; }
   .t2 { font: 400 44pt/1.02 "Lilita One"; color: var(--plum); letter-spacing: 0.01em; margin-top: 0.04in; }
   .sub { font: 600 14pt/1.35 Inter; color: var(--soft); margin: 0.14in auto 0; max-width: 6.4in; }
   .sub b { color: var(--ink); font-weight: 800; }
@@ -64,13 +68,36 @@
   <section class="panel spine"><div class="spine-text">AP&reg; BIOLOGY UNIT 2 &nbsp;&middot;&nbsp; CELL STRUCTURE AND FUNCTION</div></section>
 
   <section class="panel front">
-    <svg class="dots" viewBox="0 0 870 1125" preserveAspectRatio="none">
-      <g opacity="0.55"><circle cx="70" cy="620" r="16" fill="#8e4fc2"/><circle cx="805" cy="560" r="12" fill="#4fb3e8"/><circle cx="115" cy="820" r="9" fill="#e5483b"/>
-      <circle cx="770" cy="330" r="9" fill="#5cb44f"/><circle cx="95" cy="380" r="8" fill="#f5c242"/><circle cx="820" cy="760" r="14" fill="#f5c242"/><circle cx="60" cy="110" r="10" fill="#4fb3e8"/><circle cx="810" cy="90" r="12" fill="#e85d9c"/></g>
+    <svg class="orbit" viewBox="0 0 862.5 1125" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.5"><circle cx="70" cy="110" r="9" fill="#4fb3e8"/><circle cx="800" cy="95" r="11" fill="#e85d9c"/><circle cx="790" cy="380" r="8" fill="#5cb44f"/><circle cx="72" cy="420" r="7" fill="#f5c242"/></g>
+      <circle cx="431" cy="760" r="300" fill="none" stroke="#ffffff" stroke-width="4" stroke-dasharray="3 14" stroke-linecap="round" opacity="0.9"/>
+      <!-- mitochondrion -->
+      <g transform="translate(150 650) rotate(-24)"><rect x="-46" y="-21" width="92" height="42" rx="21" fill="#8e4fc2" stroke="#4e2378" stroke-width="5"/>
+        <path d="M-32 0 l8 -13 l8 26 l8 -26 l8 26 l8 -26 l8 26 l8 -13" fill="none" stroke="#e1c4ff" stroke-width="5" stroke-linejoin="round"/></g>
+      <!-- lysosome -->
+      <g transform="translate(150 885)"><circle r="30" fill="#4fb3e8" stroke="#2b7fb5" stroke-width="5"/><circle cx="-8" cy="-9" r="7" fill="#ffffff" opacity="0.7"/>
+        <circle cx="9" cy="6" r="4" fill="#1f6b99"/><circle cx="-6" cy="11" r="3.5" fill="#1f6b99"/></g>
+      <!-- nucleus -->
+      <g transform="translate(712 640)"><circle r="36" fill="#e85d9c" stroke="#a82a6a" stroke-width="5"/><circle r="24" fill="#c08ae8"/><circle cx="4" cy="2" r="11" fill="#7f45c4"/>
+        <circle cx="-14" cy="-16" r="6" fill="#ffffff" opacity="0.55"/></g>
+      <!-- Golgi -->
+      <g transform="translate(725 860) rotate(10)" fill="none" stroke-linecap="round"><g stroke="#c93d72" stroke-width="12"><path d="M-36 -18 q36 -22 72 0"/><path d="M-38 0 q38 -22 76 0"/><path d="M-36 18 q36 -22 72 0"/></g>
+        <g stroke="#f7a1c4" stroke-width="5"><path d="M-36 -18 q36 -22 72 0"/><path d="M-38 0 q38 -22 76 0"/><path d="M-36 18 q36 -22 72 0"/></g></g>
     </svg>
+    <div class="shadow"></div>
     <div class="title">
       <div class="kicker">AP&reg; BIOLOGY</div>
-      <div class="unit">Unit 2</div>
+      <svg class="ribbon" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" aria-label="Unit 2">
+        <polygon points="0,52 104,52 104,158 0,158 34,105" fill="#7a1450"/>
+        <polygon points="600,52 496,52 496,158 600,158 566,105" fill="#7a1450"/>
+        <polygon points="62,138 104,158 104,138" fill="#4d0c33"/>
+        <polygon points="538,138 496,158 496,138" fill="#4d0c33"/>
+        <rect x="62" y="12" width="476" height="126" rx="6" fill="#b0175a"/>
+        <rect x="62" y="12" width="476" height="18" rx="6" fill="#ffffff" opacity="0.18"/>
+        <rect x="74" y="22" width="452" height="106" rx="4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.55"/>
+        <text x="300" y="112" text-anchor="middle" font-family="Lilita One" font-size="104" fill="#4d0c33" opacity="0.35" dx="4" dy="5">UNIT 2</text>
+        <text x="300" y="112" text-anchor="middle" font-family="Lilita One" font-size="104" fill="#ffffff">UNIT 2</text>
+      </svg>
       <div class="t2">Cell Structure and Function</div>
       <div class="sub"><b>The Comprehensive Study Guide:</b> lessons, diagrams, practice questions, and full answer explanations</div>
     </div>
