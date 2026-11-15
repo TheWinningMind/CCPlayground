@@ -4,8 +4,8 @@
 
 | File | Use |
 |---|---|
-| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 140 pages, 8.5" x 11", no bleed, fonts embedded. |
-| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 140 pages on white paper. |
+| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 152 pages, 8.5" x 11", no bleed, fonts embedded. |
+| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 152 pages on white paper. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, with diagrams in full color. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
@@ -27,8 +27,8 @@
   - Three one-page mind maps, plus a blank one to fill in
 - **Part 2, Skills and Review:** task verbs, the Unit 2 calculation toolkit, experimental design, master comparison tables, and a one-page review sheet.
 - **Part 2 also includes Lab Investigations:** three step-by-step labs (cell size and diffusion, dialysis-tubing osmosis, water potential of plant tissue) with sample data, a graph, and analysis questions.
-- **Part 3, Practice:** two full practice tests (each 25 multiple-choice questions and three free-response questions worth 9 + 4 + 4 points), 100 "Who Am I?" vocabulary clues, and four diagram labeling worksheets (animal cell, plant cell, bacterial cell, membrane) with word banks.
-- **Part 4, Answers and Reference:** explanations for all 108 multiple-choice questions, FRQ scoring guidelines for both tests, lab answers, the Who Am I? and labeling keys, a glossary, a score tracker, and a learning-target checklist.
+- **Part 3, Practice:** two full practice tests (each 25 multiple-choice questions and three free-response questions worth 9 + 4 + 4 points), eight-question topic practice sets drawn from the author's question bank, 100 "Who Am I?" vocabulary clues, and four diagram labeling worksheets (animal cell, plant cell, bacterial cell, membrane) with word banks.
+- **Part 4, Answers and Reference:** explanations for all 156 multiple-choice questions, FRQ scoring guidelines for both tests, lab answers, the Who Am I? and labeling keys, a glossary, a score tracker, and a learning-target checklist.
 
 ## Paperback setup (KDP > Create > Paperback)
 
@@ -61,7 +61,7 @@
 > - Step-by-step worked examples for surface area-to-volume ratio and water potential
 > - Diagrams of the secretory pathway, fluid mosaic model, passive and active transport, the sodium–potassium pump, tonicity, endocytosis, and endosymbiosis
 > - Learning targets, misconception alerts, and exam tips for every topic
-> - Two full-length practice tests and 108 original multiple-choice questions, each with a full explanation
+> - Two full-length practice tests plus topic practice sets: 156 original multiple-choice questions, each with a full explanation
 > - 100 "Who Am I?" vocabulary questions with a complete answer key
 > - Six free-response questions with point-by-point scoring guidelines
 > - Three step-by-step lab investigations and four diagram labeling worksheets
