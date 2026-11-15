@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cover</title>
+<style>
+  /* Lilita One: SIL Open Font License 1.1 (see fonts/OFL.txt). Bundled so the cover builds offline and embeds in the PDF. */
+  @font-face { font-family: "Lilita One"; src: url("{{FONTS}}/LilitaOne-Regular.ttf") format("truetype"); }
+  @page { size: {{W}}in {{H}}in; margin: 0; }
+  :root { --bg: #ffe6d6; --bg2: #ffd3bd; --plum: #7a1450; --magenta: #b0175a; --coral: #ff6b4a; --ink: #4a1030; --soft: #8a4a62; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: {{W}}in; height: {{H}}in; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { position: relative; overflow: hidden; font-family: Inter, sans-serif; color: var(--ink);
+         background: radial-gradient(circle at 78% 62%, #fff3ea 0%, var(--bg) 45%, var(--bg2) 100%); }
+  .panel { position: absolute; top: 0; height: {{H}}in; overflow: hidden; }
+  .back { left: 0; width: calc({{BLEED}}in + {{TRIM_W}}in); padding: 0.8in 0.7in 0.6in calc({{BLEED}}in + 0.6in); }
+  .spine { left: calc({{BLEED}}in + {{TRIM_W}}in); width: {{SPINE}}in; background: var(--plum); }
+  .front { right: 0; width: calc({{BLEED}}in + {{TRIM_W}}in);
+            background: radial-gradient(circle at 50% 67.5%, rgba(255,255,255,0.95) 0, rgba(255,255,255,0.65) 17%, rgba(255,255,255,0) 34%),
+                        linear-gradient(180deg, #ffefe5 0%, #ffdccb 55%, #ffbea6 100%); }
+  .spine-text { display: none; display: {{SPINE_TEXT}}; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; color: #fff; font: 400 12pt "Lilita One"; letter-spacing: 0.06em; }
+
+  /* Decorative dots echoing the organelle colors. */
+  /* Front: Unit 1-style title block, then the cutaway cell, badges, and a tilted author tag. */
+  .title { position: absolute; left: 0.6in; right: calc({{BLEED}}in + 0.6in); top: 0.7in; text-align: center; }
+  .kicker { display: inline-block; font: 800 14pt Inter; letter-spacing: 0.32em; color: #fff; background: var(--coral); padding: 0.07in 0.2in 0.07in 0.27in; border-radius: 0.3in; }
+  .ribbon { display: block; width: 4.6in; margin: 0.12in auto 0; }
+  .shadow { position: absolute; left: 50%; transform: translateX(-50%); bottom: 1.12in; width: 4.2in; height: 0.42in; border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(122,20,80,0.32) 0, rgba(122,20,80,0) 70%); }
+  .orbit { position: absolute; inset: 0; }
+  .t2 { font: 400 44pt/1.02 "Lilita One"; color: var(--plum); letter-spacing: 0.01em; margin-top: 0.04in; }
+  .sub { font: 600 14pt/1.35 Inter; color: var(--soft); margin: 0.14in auto 0; max-width: 6.4in; }
+  .sub b { color: var(--ink); font-weight: 800; }
+  .cellbox { position: absolute; left: 50%; transform: translateX(-50%); bottom: 1.3in; width: 4.9in; }
+  .cellbox svg, .cellbox img { width: 100%; height: auto; display: block; }
+  .badges { position: absolute; left: 0.45in; right: calc({{BLEED}}in + 0.45in); bottom: 0.6in; display: flex; justify-content: center; gap: 0.1in; white-space: nowrap; }
+  .badges div { font: 700 10pt/1.2 Inter; color: var(--ink); background: #fff; padding: 0.09in 0.16in; border-left: 5pt solid var(--coral); border-radius: 0.05in; box-shadow: 0 0.03in 0 #7a145022; }
+  .tag { position: absolute; right: calc({{BLEED}}in + 0.35in); bottom: 1.45in; transform: rotate(-12deg); background: var(--plum); color: #fff; font: 400 27pt "Lilita One"; letter-spacing: 0.05em; padding: 0.09in 0.3in; box-shadow: 0.05in 0.06in 0 #00000033; }
+
+  .back h2 { font: 400 27pt/1.1 "Lilita One"; color: var(--magenta); margin-bottom: 0.2in; }
+  .back p { font: 400 11.5pt/1.5 Inter; color: var(--ink); margin-bottom: 0.14in; }
+  .back ul { list-style: none; padding: 0; margin: 0.1in 0 0.2in; }
+  .back li { font: 600 11pt/1.4 Inter; padding-left: 0.28in; position: relative; margin-bottom: 0.08in; color: var(--ink); }
+  .back li::before { content: ""; position: absolute; left: 0; top: 0.04in; width: 0.13in; height: 0.13in; border-radius: 50%; border: 1.5pt solid #00000040; }
+  .back li:nth-child(5n+1)::before { background: #e85d9c; }
+  .back li:nth-child(5n+2)::before { background: #8e4fc2; }
+  .back li:nth-child(5n+3)::before { background: #e5483b; }
+  .back li:nth-child(5n+4)::before { background: #4fb3e8; }
+  .back li:nth-child(5n+5)::before { background: #f5c242; }
+  .back .fine { position: absolute; left: calc({{BLEED}}in + 0.6in); bottom: 0.6in; width: 4.6in; font: 400 7.5pt/1.4 Inter; color: var(--soft); }
+  /* KDP prints the barcode in the lower-right of the back cover (2" x 1.2"); keep that area empty. */
+</style></head>
+<body>
+  <section class="panel back">
+    <h2>See the cell from the inside out&mdash;and master AP&reg; Biology Unit 2.</h2>
+    <p>Unit 2 is where biology becomes cellular. You will learn what every organelle does, why cells stay small, how the fluid mosaic membrane controls what enters and leaves, how water moves by osmosis, and how compartments and endosymbiosis shaped the eukaryotic cell. This guide explains each idea step by step, then gives you the practice you need to answer exam-style questions with confidence.</p>
+    <ul>
+      <li>Clear lessons on all ten Unit 2 topics (current Fall 2025 numbering), from organelles to the origins of compartmentalization</li>
+      <li>A 3D Organelle Gallery plus labeled animal, plant, and bacterial cells</li>
+      <li>Step-by-step math: surface area-to-volume ratios and water potential</li>
+      <li>Misconception alerts, exam tips, and three one-page mind maps</li>
+      <li>Two full practice tests and topic practice sets: 188 multiple-choice questions with full explanations, plus 100 &ldquo;Who Am I?&rdquo; vocabulary questions</li>
+      <li>Six free-response questions with point-by-point scoring guidelines</li>
+      <li>Three step-by-step lab investigations and four diagram labeling worksheets</li>
+      <li>Master comparison tables, a one-page review sheet, glossary, and score tracker</li>
+    </ul>
+    <p>Ideal for students enrolled in AP Biology, for summer preparation, and for review before unit tests and the AP Exam.</p>
+    <div class="fine">AP&reg; and Advanced Placement&reg; are registered trademarks of the College Board, which is not affiliated with, and does not endorse, this product.</div>
+  </section>
+
+  <section class="panel spine"><div class="spine-text">AP&reg; BIOLOGY UNIT 2 &nbsp;&middot;&nbsp; CELL STRUCTURE AND FUNCTION</div></section>
+
+  <section class="panel front">
+    <svg class="orbit" viewBox="0 0 862.5 1125" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.5"><circle cx="70" cy="110" r="9" fill="#4fb3e8"/><circle cx="800" cy="95" r="11" fill="#e85d9c"/><circle cx="790" cy="380" r="8" fill="#5cb44f"/><circle cx="72" cy="420" r="7" fill="#f5c242"/></g>
+      <circle cx="431" cy="760" r="300" fill="none" stroke="#ffffff" stroke-width="4" stroke-dasharray="3 14" stroke-linecap="round" opacity="0.9"/>
+      <!-- mitochondrion -->
+      <g transform="translate(150 650) rotate(-24)"><rect x="-46" y="-21" width="92" height="42" rx="21" fill="#8e4fc2" stroke="#4e2378" stroke-width="5"/>
+        <path d="M-32 0 l8 -13 l8 26 l8 -26 l8 26 l8 -26 l8 26 l8 -13" fill="none" stroke="#e1c4ff" stroke-width="5" stroke-linejoin="round"/></g>
+      <!-- lysosome -->
+      <g transform="translate(150 885)"><circle r="30" fill="#4fb3e8" stroke="#2b7fb5" stroke-width="5"/><circle cx="-8" cy="-9" r="7" fill="#ffffff" opacity="0.7"/>
+        <circle cx="9" cy="6" r="4" fill="#1f6b99"/><circle cx="-6" cy="11" r="3.5" fill="#1f6b99"/></g>
+      <!-- nucleus -->
+      <g transform="translate(712 640)"><circle r="36" fill="#e85d9c" stroke="#a82a6a" stroke-width="5"/><circle r="24" fill="#c08ae8"/><circle cx="4" cy="2" r="11" fill="#7f45c4"/>
+        <circle cx="-14" cy="-16" r="6" fill="#ffffff" opacity="0.55"/></g>
+      <!-- Golgi -->
+      <g transform="translate(725 860) rotate(10)" fill="none" stroke-linecap="round"><g stroke="#c93d72" stroke-width="12"><path d="M-36 -18 q36 -22 72 0"/><path d="M-38 0 q38 -22 76 0"/><path d="M-36 18 q36 -22 72 0"/></g>
+        <g stroke="#f7a1c4" stroke-width="5"><path d="M-36 -18 q36 -22 72 0"/><path d="M-38 0 q38 -22 76 0"/><path d="M-36 18 q36 -22 72 0"/></g></g>
+    </svg>
+    <div class="shadow"></div>
+    <div class="title">
+      <div class="kicker">AP&reg; BIOLOGY</div>
+      <svg class="ribbon" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" aria-label="Unit 2">
+        <polygon points="0,52 104,52 104,158 0,158 34,105" fill="#7a1450"/>
+        <polygon points="600,52 496,52 496,158 600,158 566,105" fill="#7a1450"/>
+        <polygon points="62,138 104,158 104,138" fill="#4d0c33"/>
+        <polygon points="538,138 496,158 496,138" fill="#4d0c33"/>
+        <rect x="62" y="12" width="476" height="126" rx="6" fill="#b0175a"/>
+        <rect x="62" y="12" width="476" height="18" rx="6" fill="#ffffff" opacity="0.18"/>
+        <rect x="74" y="22" width="452" height="106" rx="4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.55"/>
+        <text x="300" y="112" text-anchor="middle" font-family="Lilita One" font-size="104" fill="#4d0c33" opacity="0.35" dx="4" dy="5">UNIT 2</text>
+        <text x="300" y="112" text-anchor="middle" font-family="Lilita One" font-size="104" fill="#ffffff">UNIT 2</text>
+      </svg>
+      <div class="t2">Cell Structure and Function</div>
+      <div class="sub"><b>The Comprehensive Study Guide:</b> lessons, diagrams, practice questions, and full answer explanations</div>
+    </div>
+
+    <!-- Cartoon cutaway of an animal cell: a sphere with a wedge removed, showing a vertical back wall
+         and a horizontal floor of cytoplasm. Flat colors with dark outlines and light highlights. -->
+    <div class="cellbox"><div class="art" data-ai="cover-cell" data-alt="Cutaway illustration of an animal cell">
+    <svg viewBox="0 30 1000 970" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="cBack"><rect x="0" y="0" width="1000" height="560"/></clipPath>
+        <clipPath id="cInner"><circle cx="500" cy="520" r="430"/></clipPath>
+        <radialGradient id="gRind" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#8fd468"/><stop offset="0.55" stop-color="#5cb44f"/><stop offset="1" stop-color="#3a8a37"/></radialGradient>
+        <linearGradient id="gWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b94a"/><stop offset="1" stop-color="#f9cf62"/></linearGradient>
+        <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde38a"/><stop offset="1" stop-color="#fbd765"/></linearGradient>
+        <radialGradient id="gDome" cx="40%" cy="30%" r="75%"><stop offset="0" stop-color="#ff9cc8"/><stop offset="1" stop-color="#d93f86"/></radialGradient>
+        <radialGradient id="gNuc2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#d9b2ff"/><stop offset="1" stop-color="#a66ee0"/></radialGradient>
+        <radialGradient id="gNo" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#c79cf2"/><stop offset="1" stop-color="#7f45c4"/></radialGradient>
+        <radialGradient id="gBlue" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#bfe9ff"/><stop offset="1" stop-color="#3fa2dc"/></radialGradient>
+      </defs>
+
+      <!-- Sphere rind -->
+      <circle cx="500" cy="520" r="470" fill="url(#gRind)" stroke="#2f7a2d" stroke-width="8"/>
+      <g fill="#3f9a3b" opacity="0.5">
+        <ellipse cx="160" cy="330" rx="26" ry="14"/><ellipse cx="230" cy="190" rx="20" ry="11"/><ellipse cx="790" cy="200" rx="24" ry="12"/>
+        <ellipse cx="880" cy="380" rx="18" ry="26"/><ellipse cx="110" cy="560" rx="16" ry="24"/><ellipse cx="420" cy="90" rx="22" ry="10"/>
+        <ellipse cx="150" cy="790" rx="30" ry="14"/><ellipse cx="860" cy="780" rx="28" ry="14"/><ellipse cx="500" cy="840" rx="40" ry="12"/>
+      </g>
+      <g fill="#a8e27f" opacity="0.6"><ellipse cx="300" cy="120" rx="60" ry="14" transform="rotate(-20 300 120)"/><ellipse cx="130" cy="420" rx="12" ry="40"/></g>
+
+      <!-- Back wall (vertical cut face) -->
+      <g clip-path="url(#cBack)"><circle cx="500" cy="520" r="430" fill="url(#gWall)" stroke="#d7962b" stroke-width="5"/></g>
+      <!-- Floor (horizontal cut face) -->
+      <path d="M70 560 C 70 670, 280 790, 500 790 C 720 790, 930 670, 930 560 C 930 520, 720 470, 500 470 C 280 470, 70 520, 70 560 Z" fill="url(#gFloor)"/>
+      <path d="M70 560 C 70 670, 280 790, 500 790 C 720 790, 930 670, 930 560" fill="none" stroke="#2f7a2d" stroke-width="10"/>
+      <path d="M70 560 C 70 520, 280 470, 500 470 C 720 470, 930 520, 930 560" fill="none" stroke="#e0a83a" stroke-width="4"/>
+
+      <!-- Ribosomes and small vesicles on the back wall -->
+      <g fill="#7cc95b" stroke="#3f8f3c" stroke-width="2.5">
+        <circle cx="620" cy="160" r="7"/><circle cx="690" cy="190" r="7"/><circle cx="760" cy="250" r="7"/><circle cx="230" cy="420" r="7"/>
+        <circle cx="810" cy="320" r="6"/><circle cx="560" cy="120" r="6"/><circle cx="300" cy="200" r="6"/><circle cx="150" cy="470" r="6"/>
+      </g>
+      <circle cx="770" cy="380" r="40" fill="url(#gBlue)" stroke="#2b7fb5" stroke-width="5"/>
+      <path d="M752 362 q8 -8 18 -6" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="690" cy="300" r="20" fill="url(#gBlue)" stroke="#2b7fb5" stroke-width="4"/>
+      <circle cx="270" cy="330" r="18" fill="url(#gBlue)" stroke="#2b7fb5" stroke-width="4"/>
+
+      <!-- Golgi apparatus (stacked looping cisternae) on the back wall -->
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#c93d72" stroke-width="16">
+          <path d="M190 360 C 230 300, 300 260, 380 250"/><path d="M200 400 C 240 340, 310 300, 400 290"/><path d="M215 440 C 255 380, 320 340, 410 330"/>
+          <path d="M380 250 q30 -6 40 10 q-14 14 -40 10"/><path d="M190 360 q-24 6 -20 30 q18 4 30 -20"/>
+        </g>
+        <g stroke="#f7a1c4" stroke-width="7">
+          <path d="M190 360 C 230 300, 300 260, 380 250"/><path d="M200 400 C 240 340, 310 300, 400 290"/><path d="M215 440 C 255 380, 320 340, 410 330"/>
+          <path d="M380 250 q30 -6 40 10 q-14 14 -40 10"/><path d="M190 360 q-24 6 -20 30 q18 4 30 -20"/>
+        </g>
+      </g>
+      <g fill="#f7a1c4" stroke="#c93d72" stroke-width="4"><circle cx="440" cy="240" r="11"/><circle cx="430" cy="300" r="9"/><circle cx="170" cy="440" r="10"/></g>
+
+      <!-- Rough ER folds wrapped around the nucleus -->
+      <g fill="none" stroke-linecap="round">
+        <g stroke="#a82a45" stroke-width="22">
+          <path d="M300 600 C 300 470, 380 390, 500 380 C 620 390, 700 470, 700 600"/>
+          <path d="M340 610 C 345 500, 410 430, 500 425 C 590 430, 655 500, 660 610"/>
+        </g>
+        <g stroke="#e8566f" stroke-width="12">
+          <path d="M300 600 C 300 470, 380 390, 500 380 C 620 390, 700 470, 700 600"/>
+          <path d="M340 610 C 345 500, 410 430, 500 425 C 590 430, 655 500, 660 610"/>
+        </g>
+        <g stroke="#a82a45" stroke-width="5" stroke-dasharray="2 14"><path d="M300 600 C 300 470, 380 390, 500 380 C 620 390, 700 470, 700 600"/></g>
+      </g>
+
+      <!-- Nucleus: half dome, cut to show the nucleoplasm and nucleolus -->
+      <path d="M368 600 A 132 132 0 0 1 632 600 Z" fill="url(#gDome)" stroke="#a82a6a" stroke-width="7"/>
+      <path d="M392 600 A 108 108 0 0 1 608 600 Z" fill="url(#gNuc2)" stroke="#7f45c4" stroke-width="4"/>
+      <ellipse cx="500" cy="600" rx="132" ry="26" fill="#c08ae8" stroke="#a82a6a" stroke-width="6"/>
+      <circle cx="505" cy="545" r="44" fill="url(#gNo)" stroke="#5e2b9a" stroke-width="5"/>
+      <path d="M484 528 q10 -10 22 -8" stroke="#ead8ff" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <g fill="#4b3fb0" stroke="#2c2577" stroke-width="2"><circle cx="430" cy="560" r="8"/><circle cx="450" cy="520" r="8"/><circle cx="570" cy="520" r="8"/><circle cx="585" cy="565" r="8"/><circle cx="470" cy="590" r="7"/><circle cx="545" cy="592" r="7"/></g>
+      <g fill="#ffd1e6"><circle cx="420" cy="512" r="6"/><circle cx="445" cy="486" r="6"/><circle cx="500" cy="472" r="6"/><circle cx="555" cy="486" r="6"/><circle cx="582" cy="512" r="6"/></g>
+
+      <!-- Mitochondria (purple and red) with cristae -->
+      <g stroke-linejoin="round">
+        <g transform="translate(205 610) rotate(-12)"><rect x="-82" y="-38" width="164" height="76" rx="38" fill="#8e4fc2" stroke="#4e2378" stroke-width="7"/><path d="M-58 0 l12 -22 l12 44 l12 -44 l12 44 l12 -44 l12 44 l12 -44 l12 44 l12 -22" fill="none" stroke="#e1c4ff" stroke-width="7"/><path d="M-50 -24 h70" stroke="#c9a2ef" stroke-width="6" stroke-linecap="round"/></g>
+        <g transform="translate(800 590) rotate(14)"><rect x="-76" y="-36" width="152" height="72" rx="36" fill="#8e4fc2" stroke="#4e2378" stroke-width="7"/><path d="M-54 0 l11 -20 l11 40 l11 -40 l11 40 l11 -40 l11 40 l11 -40 l11 40 l11 -20" fill="none" stroke="#e1c4ff" stroke-width="7"/></g>
+        <g transform="translate(320 705) rotate(6)"><rect x="-90" y="-40" width="180" height="80" rx="40" fill="#e5483b" stroke="#8a1f17" stroke-width="7"/><path d="M-64 0 l13 -22 l13 44 l13 -44 l13 44 l13 -44 l13 44 l13 -44 l13 44 l13 -44 l13 22" fill="none" stroke="#ffb3a8" stroke-width="7"/><path d="M-56 -26 h80" stroke="#ff8a7d" stroke-width="6" stroke-linecap="round"/></g>
+        <g transform="translate(680 705) rotate(-4)"><rect x="-90" y="-40" width="180" height="80" rx="40" fill="#e5483b" stroke="#8a1f17" stroke-width="7"/><path d="M-64 0 l13 -22 l13 44 l13 -44 l13 44 l13 -44 l13 44 l13 -44 l13 44 l13 -44 l13 22" fill="none" stroke="#ffb3a8" stroke-width="7"/></g>
+      </g>
+
+      <!-- Lysosomes, centrioles, vesicles on the floor -->
+      <circle cx="500" cy="728" r="30" fill="url(#gBlue)" stroke="#2b7fb5" stroke-width="5"/>
+      <path d="M486 713 q8 -8 18 -6" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <g transform="translate(800 660) rotate(-10)"><rect x="-34" y="-12" width="68" height="24" rx="6" fill="#4fb3e8" stroke="#1f6b99" stroke-width="5"/><rect x="18" y="-36" width="24" height="56" rx="6" fill="#79c8f0" stroke="#1f6b99" stroke-width="5"/></g>
+      <g fill="none" stroke="#2b7fb5" stroke-width="5"><circle cx="190" cy="650" r="14"/><circle cx="880" cy="520" r="12"/><circle cx="460" cy="660" r="9"/></g>
+      <g fill="#7cc95b" stroke="#3f8f3c" stroke-width="2.5"><circle cx="260" cy="530" r="6"/><circle cx="740" cy="660" r="6"/><circle cx="580" cy="660" r="6"/><circle cx="130" cy="600" r="6"/></g>
+
+      <!-- Rind highlight -->
+      <path d="M120 300 C 170 190, 260 110, 380 70" stroke="#c8f3a8" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.8"/>
+    </svg></div></div>
+
+    <div class="tag">{{AUTHOR}}</div>
+    <div class="badges">
+      <div>All 10 topics + 3 mind maps</div>
+      <div>200+ practice questions</div>
+      <div>Free-response practice with scoring guides</div>
+    </div>
+  </section>
+</body></html>

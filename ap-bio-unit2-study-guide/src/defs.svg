@@ -1,0 +1,31 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+  <radialGradient id="zCyto" cx="42%" cy="38%" r="70%"><stop offset="0" stop-color="#fff6e6"/><stop offset="0.6" stop-color="#ffe2bd"/><stop offset="1" stop-color="#f3b27a"/></radialGradient>
+  <linearGradient id="zRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9cc6"/><stop offset="0.5" stop-color="#e2337a"/><stop offset="1" stop-color="#8e1047"/></linearGradient>
+  <linearGradient id="zSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9c1250"/><stop offset="0.4" stop-color="#f0548f"/><stop offset="1" stop-color="#7a0d3c"/></linearGradient>
+  <radialGradient id="zNuc" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#e2ccff"/><stop offset="0.5" stop-color="#8a4fe0"/><stop offset="1" stop-color="#3a1280"/></radialGradient>
+  <radialGradient id="zNucIn" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#c9a6ff"/><stop offset="1" stop-color="#6b33c4"/></radialGradient>
+  <radialGradient id="zNucl" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#ffb0dd"/><stop offset="0.6" stop-color="#c2187a"/><stop offset="1" stop-color="#5e0a3a"/></radialGradient>
+  <linearGradient id="zMito" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc48a"/><stop offset="0.5" stop-color="#f26a1b"/><stop offset="1" stop-color="#8f3205"/></linearGradient>
+  <linearGradient id="zMitoIn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0dc"/><stop offset="1" stop-color="#ffc58f"/></linearGradient>
+  <linearGradient id="zChl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8f27a"/><stop offset="0.5" stop-color="#58b21c"/><stop offset="1" stop-color="#2a6106"/></linearGradient>
+  <linearGradient id="zChlIn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1ffd2"/><stop offset="1" stop-color="#bfe88a"/></linearGradient>
+  <linearGradient id="zThy" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f5a00"/><stop offset="0.45" stop-color="#5fc221"/><stop offset="1" stop-color="#1f5a00"/></linearGradient>
+  <linearGradient id="zGolgi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a5f5ee"/><stop offset="1" stop-color="#0e8a82"/></linearGradient>
+  <linearGradient id="zER" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8dcff"/><stop offset="1" stop-color="#2463b8"/></linearGradient>
+  <linearGradient id="zTube" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6ebff"/><stop offset="0.5" stop-color="#5a9be6"/><stop offset="1" stop-color="#1c4f94"/></linearGradient>
+  <radialGradient id="zLyso" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#f0ffb8"/><stop offset="0.6" stop-color="#8fd41f"/><stop offset="1" stop-color="#3f6d04"/></radialGradient>
+  <radialGradient id="zPerox" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#ffe9f3"/><stop offset="0.6" stop-color="#f58bb8"/><stop offset="1" stop-color="#a3245d"/></radialGradient>
+  <radialGradient id="zVes" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="0.5" stop-color="#ffe680"/><stop offset="1" stop-color="#c99600"/></radialGradient>
+  <radialGradient id="zVac" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f2fbff"/><stop offset="0.7" stop-color="#bfe6fa"/><stop offset="1" stop-color="#6fb6dc"/></radialGradient>
+  <radialGradient id="zRiboL" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#e6c7ff"/><stop offset="0.6" stop-color="#9152d6"/><stop offset="1" stop-color="#4a1a85"/></radialGradient>
+  <radialGradient id="zRiboS" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#ffe0b8"/><stop offset="0.6" stop-color="#f29a3d"/><stop offset="1" stop-color="#8f4a05"/></radialGradient>
+  <linearGradient id="zHead" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd8e8"/><stop offset="1" stop-color="#d93d7e"/></linearGradient>
+  <linearGradient id="zProt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2463b8"/><stop offset="0.45" stop-color="#8cc4ff"/><stop offset="1" stop-color="#1c4f94"/></linearGradient>
+  <linearGradient id="zWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9f2a8"/><stop offset="1" stop-color="#6f9e2a"/></linearGradient>
+  <linearGradient id="zProk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bff7f1"/><stop offset="0.5" stop-color="#2fc2b4"/><stop offset="1" stop-color="#0b6e66"/></linearGradient>
+  <linearGradient id="zProkIn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4fffd"/><stop offset="1" stop-color="#bdeee8"/></linearGradient>
+  <radialGradient id="zShine" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="zShadow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity="0.35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  <radialGradient id="zBg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3e8f4"/></radialGradient>
+  <filter id="zDrop" x="-25%" y="-25%" width="150%" height="170%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.3"/></filter>
+</defs></svg>
