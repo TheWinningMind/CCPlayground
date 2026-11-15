@@ -69,8 +69,8 @@ sub, sup { font-size: 70%; line-height: 0; }
 
 .toc { break-after: page; }
 .toc ol { list-style: none; padding: 0; margin: 0; }
-.toc li { display: flex; align-items: baseline; font-family: Inter, sans-serif; font-size: 10.5pt; margin: 0 0 6pt; }
-.toc li.part { font-weight: 800; margin-top: 12pt; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
+.toc li { display: flex; align-items: baseline; font-family: Inter, sans-serif; font-size: 10pt; margin: 0 0 2.4pt; }
+.toc li.part { font-weight: 800; margin-top: 6pt; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
 .toc li.sub { padding-left: 0.3in; font-size: 10pt; color: #222; }
 .toc .dots { flex: 1; border-bottom: 1pt dotted #888; margin: 0 6pt; transform: translateY(-3pt); }
 .toc .pg { font-weight: 700; min-width: 0.3in; text-align: right; }
@@ -143,7 +143,7 @@ dl.vocab dd { margin: 0 0 0 0.12in; font-size: 9.8pt; }
 .pb { break-before: page; }
 .avoid { break-inside: avoid; }
 .check { font-family: "DejaVu Sans", sans-serif; }
-.tracker td { height: 0.28in; }
+.tracker td { height: 0.2in; padding-top: 2pt; padding-bottom: 2pt; }
 .tracker td:nth-child(n+2) { text-align: center; font-family: "DejaVu Sans"; font-size: 11pt; font-weight: normal; }
 
 /* ---------- Mind maps (visual review) ---------- */

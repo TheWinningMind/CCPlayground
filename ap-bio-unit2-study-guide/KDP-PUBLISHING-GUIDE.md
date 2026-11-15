@@ -4,8 +4,8 @@
 
 | File | Use |
 |---|---|
-| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 85 pages, 8.5" x 11", no bleed, fonts embedded. |
-| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 85 pages on white paper. |
+| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 110 pages, 8.5" x 11", no bleed, fonts embedded. |
+| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 110 pages on white paper. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, with diagrams in full color. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
@@ -26,8 +26,9 @@
   - Diagrams of the secretory pathway, the fluid mosaic membrane, transport mechanisms, the Na⁺/K⁺ pump cycle, tonicity, endocytosis, and endosymbiosis
   - Three one-page mind maps, plus a blank one to fill in
 - **Part 2, Skills and Review:** task verbs, the Unit 2 calculation toolkit, experimental design, master comparison tables, and a one-page review sheet.
-- **Part 3, Practice:** 25-question multiple-choice test, three free-response questions (9 + 4 + 4 points), and 100 "Who Am I?" vocabulary clues.
-- **Part 4, Answers and Reference:** explanations for all 83 multiple-choice questions, FRQ scoring guidelines, the Who Am I? key, a glossary, a score tracker, and a learning-target checklist.
+- **Part 2 also includes Lab Investigations:** three step-by-step labs (cell size and diffusion, dialysis-tubing osmosis, water potential of plant tissue) with sample data, a graph, and analysis questions.
+- **Part 3, Practice:** two full practice tests (each 25 multiple-choice questions and three free-response questions worth 9 + 4 + 4 points), 100 "Who Am I?" vocabulary clues, and four diagram labeling worksheets (animal cell, plant cell, bacterial cell, membrane) with word banks.
+- **Part 4, Answers and Reference:** explanations for all 108 multiple-choice questions, FRQ scoring guidelines for both tests, lab answers, the Who Am I? and labeling keys, a glossary, a score tracker, and a learning-target checklist.
 
 ## Paperback setup (KDP > Create > Paperback)
 
@@ -44,7 +45,7 @@
 
 **Title:** AP Biology Unit 2: Cell Structure and Function
 
-**Subtitle:** The Comprehensive Illustrated Study Guide with 3D Organelle Gallery, Step-by-Step Lessons, 180+ Practice Questions, Free-Response Practice, and Full Answer Explanations
+**Subtitle:** The Comprehensive Illustrated Study Guide with 3D Organelle Gallery, Step-by-Step Lessons, 200+ Practice Questions, Free-Response Practice, and Full Answer Explanations
 
 **Series (optional):** add this book and the Unit 1 book to a KDP series, such as "AP Biology Comprehensive Study Guides," so Amazon links them.
 
@@ -60,9 +61,10 @@
 > - Step-by-step worked examples for surface area-to-volume ratio and water potential
 > - Diagrams of the secretory pathway, fluid mosaic model, passive and active transport, the sodium–potassium pump, tonicity, endocytosis, and endosymbiosis
 > - Learning targets, misconception alerts, and exam tips for every topic
-> - 83 original multiple-choice questions, each with a full explanation
+> - Two full-length practice tests and 108 original multiple-choice questions, each with a full explanation
 > - 100 "Who Am I?" vocabulary questions with a complete answer key
-> - Three free-response questions with point-by-point scoring guidelines
+> - Six free-response questions with point-by-point scoring guidelines
+> - Three step-by-step lab investigations and four diagram labeling worksheets
 > - Three one-page mind maps, master comparison tables, a one-page review sheet, a glossary, and a score tracker
 >
 > Ideal for students taking AP Biology, for summer preparation, and for review before unit tests and the AP Exam.
