@@ -200,3 +200,17 @@ figure .art img { max-width: 100%; }
 .steps { counter-reset: st; list-style: none; padding-left: 0; }
 .steps > li { counter-increment: st; position: relative; padding-left: 0.34in; margin-bottom: 0.06in; }
 .steps > li::before { content: counter(st); position: absolute; left: 0; top: 0; width: 0.22in; height: 0.22in; border-radius: 50%; background: var(--ink); color: #fff; font: 800 8.5pt/0.22in Inter, sans-serif; text-align: center; }
+
+/* ---------- Similarities and Differences ---------- */
+.cmp-sec { margin-top: 0.2in; }
+.cmp { break-inside: avoid; border-left: 3pt solid var(--ink); padding: 0.02in 0 0.02in 0.12in; margin: 0 0 0.12in; }
+.cmp h4 { text-transform: none; letter-spacing: 0; font-size: 10pt; margin: 0 0 2pt; }
+.cmp .cmp-n { display: inline-block; font: 800 8pt Inter, sans-serif; background: var(--ink); color: #fff; padding: 1pt 4pt; border-radius: 2pt; margin-right: 3pt; vertical-align: 1pt; }
+.cmp p { font-size: 9.4pt; line-height: 1.33; margin: 0 0 2pt; text-align: left; }
+.cmp p b { font: 800 7.4pt Inter, sans-serif; letter-spacing: 0.08em; margin-right: 3pt; }
+.cmp .cue { font-style: italic; }
+.cmp .cue b { font-style: normal; }
+table.cmp-t { margin: 3pt 0 4pt; font-size: 9pt; table-layout: fixed; }
+table.cmp-t th { width: 50%; text-transform: none; letter-spacing: 0; font-size: 8.4pt; padding: 2.5pt 6pt; }
+table.cmp-t td { padding: 3pt 6pt; }
+table.cmp-t td:first-child { font-weight: normal; border-right: 0.6pt solid var(--rule); }

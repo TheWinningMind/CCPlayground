@@ -94,6 +94,10 @@ dl.vocab dd { margin: 0 0 0 1em; }
 .mm-foot { font-family: sans-serif; font-weight: bold; text-align: center; margin: 0.8em 0; }
 .wq { margin: 0 0 0.6em; }
 .wai-key p { margin: 0 0 0.2em; }
+.cmp { border-left: 3px solid #000; padding-left: 0.6em; margin: 0 0 1em; }
+.cmp h4 { margin: 0 0 0.2em; }
+.cmp p { margin: 0 0 0.3em; }
+.cmp-n { font-family: sans-serif; font-weight: bold; }
 .title-block { text-align: center; margin-top: 3em; }
 .title-block .big { font-family: sans-serif; font-size: 2.4em; font-weight: bold; line-height: 1.1; margin: 0.3em 0; }
 .title-block .sub { font-family: sans-serif; font-size: 1.15em; margin: 0.5em 0 1.5em; }
