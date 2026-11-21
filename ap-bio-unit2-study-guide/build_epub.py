@@ -161,6 +161,26 @@ def rasterize_figures(soup) -> list[str]:
     return names
 
 
+def copy_raster_images(soup) -> list[str]:
+    """Copy src/img/ images used by the book into the eBook as JPEGs no wider than 1600 px.
+
+    Kindle's 70% royalty deducts a delivery fee per megabyte, so print-resolution PNGs are recompressed here.
+    """
+    from PIL import Image
+    names = {}
+    for img in soup.find_all("img", src=re.compile(r"^img/")):
+        src = SRC / img["src"]
+        name = "r-" + re.sub(r"[^A-Za-z0-9]+", "-", src.stem).strip("-").lower() + ".jpg"
+        if name not in names.values():
+            im = Image.open(src).convert("RGB")
+            if im.width > 1600:
+                im = im.resize((1600, round(im.height * 1600 / im.width)), Image.LANCZOS)
+            im.save(WORK / "OEBPS" / "images" / name, "JPEG", quality=82, optimize=True)
+            names[src] = name
+        img["src"] = "images/" + name
+    return sorted(set(names.values()))
+
+
 def copy_ai_images(soup) -> list[str]:
     """Copy author-supplied AI images (already swapped into the HTML) into the eBook."""
     from build import IMAGES
@@ -247,6 +267,7 @@ def build():
     strip_print_only(soup)
     images = rasterize_figures(soup)
     ai_images = copy_ai_images(soup)
+    raster_images = copy_raster_images(soup)
     convert_quizzes(soup)
     link_quizzes_to_answers(soup)
 
@@ -346,6 +367,7 @@ def build():
     manifest += [f'<item id="img-{i[:-4]}" href="images/{i}" media-type="image/png"/>' for i in images]
     manifest += [f'<item id="{i.rsplit(".", 1)[0]}" href="images/{i}" '
                  f'media-type="{"image/png" if i.endswith(".png") else "image/jpeg"}"/>' for i in ai_images]
+    manifest += [f'<item id="{i.rsplit(".", 1)[0]}" href="images/{i}" media-type="image/jpeg"/>' for i in raster_images]
     spine = ['<itemref idref="cover" linear="no"/>'] + [f'<itemref idref="{f[:-6]}"/>' for f, *_ in chapters]
     spine.insert(3, '<itemref idref="nav"/>')  # contents after title and copyright
     from datetime import datetime, timezone
