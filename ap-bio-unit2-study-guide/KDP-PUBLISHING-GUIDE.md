@@ -4,14 +4,16 @@
 
 | File | Use |
 |---|---|
-| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 159 pages, 8.5" x 11", no bleed, fonts embedded. |
-| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 159 pages on white paper. |
+| `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 238 pages, 8.5" x 11", no bleed, fonts embedded. |
+| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 238 pages on white paper. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, with diagrams in full color. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
 | `images/` | Put AI-generated images here. Any slot without an image keeps the built-in 3D illustration. |
 | `src/` | Editable source (HTML/CSS) for every chapter and the cover. The cover title font, Lilita One, is bundled in `src/fonts/` under the SIL Open Font License, which allows commercial use. `src/defs.svg` holds the shared 3D shading used by all illustrations. |
 | `build.py` | Rebuilds both PDFs: `python3 build.py`. To set the author/publisher name: `GUIDE_AUTHOR="Your Name" python3 build.py`. |
+| `src/img/` | The two membrane-transport pictures you uploaded: the full-page transport chart and the nine-panel picture used in Labeling Worksheet 5. |
+| `make_workbook.py` | Regenerates the Free-Response Problem Workbook and its answers from your two Word files in `new-material/`. Only needed if you edit those Word files. |
 | `build_epub.py` | Rebuilds the eBook and its cover: `python3 build_epub.py` (run `build.py` first). |
 
 > **Before you upload:** the author name is set to **"DAVID SREERAMA"**, the same as the Unit 1 book. The spine width depends on the page count, so **always rebuild after you edit content or add images**. `build.py` resizes the cover automatically.
@@ -25,10 +27,10 @@
   - Worked examples for SA:V ratios and water potential
   - Diagrams of the secretory pathway, the fluid mosaic membrane, transport mechanisms, the Na⁺/K⁺ pump cycle, tonicity, endocytosis, and endosymbiosis
   - Three one-page mind maps, plus a blank one to fill in
-- **Part 2, Skills and Review:** task verbs, the Unit 2 calculation toolkit, experimental design, master comparison tables, and a one-page review sheet.
+- **Part 2, Skills and Review:** task verbs, the Unit 2 calculation toolkit, experimental design, master comparison tables, a one-page review sheet, and a full-page visual summary of membrane transport (turned sideways).
 - **Part 2 also includes Lab Investigations:** three step-by-step labs (cell size and diffusion, dialysis-tubing osmosis, water potential of plant tissue) with sample data, a graph, and analysis questions.
-- **Part 3, Practice:** two full practice tests (each 25 multiple-choice questions and three free-response questions worth 9 + 4 + 4 points), eight-question topic practice sets drawn from the author's question bank, 100 "Who Am I?" vocabulary clues, and four diagram labeling worksheets (animal cell, plant cell, bacterial cell, membrane) with word banks.
-- **Part 4, Answers and Reference:** explanations for all 188 multiple-choice questions, FRQ scoring guidelines for both tests, lab answers, the Who Am I? and labeling keys, a glossary, a score tracker, and a learning-target checklist.
+- **Part 3, Practice:** two full practice tests (each 25 multiple-choice questions and three free-response questions worth 9 + 4 + 4 points), fifteen-question topic practice sets drawn from the author's question bank (some with shared data tables), a **Free-Response Problem Workbook** of 72 data-based problems (12 sets, 408 points), 100 "Who Am I?" vocabulary clues, and five diagram labeling worksheets (animal cell, plant cell, bacterial cell, membrane, and a nine-panel "name the transport mechanism" worksheet) with word banks.
+- **Part 4, Answers and Reference:** explanations for all 258 multiple-choice questions, FRQ scoring guidelines for both tests, point-by-point answers for all 72 workbook problems, lab answers, the Who Am I? and labeling keys, a glossary, a score tracker, and a learning-target checklist.
 
 ## Paperback setup (KDP > Create > Paperback)
 
@@ -45,7 +47,7 @@
 
 **Title:** AP Biology Unit 2: Cell Structure and Function
 
-**Subtitle:** The Comprehensive Illustrated Study Guide with 3D Organelle Gallery, Step-by-Step Lessons, 200+ Practice Questions, Free-Response Practice, and Full Answer Explanations
+**Subtitle:** The Comprehensive Illustrated Study Guide with 3D Organelle Gallery, Step-by-Step Lessons, 250+ Multiple-Choice Questions, 72 Free-Response Problems, and Full Answer Explanations
 
 **Series (optional):** add this book and the Unit 1 book to a KDP series, such as "AP Biology Comprehensive Study Guides," so Amazon links them.
 
@@ -61,10 +63,11 @@
 > - Step-by-step worked examples for surface area-to-volume ratio and water potential
 > - Diagrams of the secretory pathway, fluid mosaic model, passive and active transport, the sodium–potassium pump, tonicity, endocytosis, and endosymbiosis
 > - Learning targets, misconception alerts, and exam tips for every topic
-> - Two full-length practice tests plus topic practice sets: 188 original multiple-choice questions, each with a full explanation
+> - Two full-length practice tests plus 15-question topic practice sets: 258 original multiple-choice questions, each with a full explanation
 > - 100 "Who Am I?" vocabulary questions with a complete answer key
-> - Six free-response questions with point-by-point scoring guidelines
-> - Three step-by-step lab investigations and four diagram labeling worksheets
+> - A 72-problem free-response workbook (data tables, calculations, and experimental design) plus six practice-test free-response questions, all with point-by-point scoring
+> - Three step-by-step lab investigations and five diagram labeling worksheets
+> - A full-page visual summary of every membrane transport mechanism
 > - Three one-page mind maps, master comparison tables, a one-page review sheet, a glossary, and a score tracker
 >
 > Ideal for students taking AP Biology, for summer preparation, and for review before unit tests and the AP Exam.
@@ -89,7 +92,7 @@
 
 ## Things to know before publishing
 
-1. **AI-generated content disclosure.** KDP asks whether the text, images, or translations are AI-generated. The text was drafted with AI assistance, so answer that honestly. If you add AI-generated images from `AI-IMAGE-PROMPTS.md`, also answer **yes** for images. KDP requires the disclosure, and it isn't shown to customers.
+1. **AI-generated content disclosure.** KDP asks whether the text, images, or translations are AI-generated. The text was drafted with AI assistance, so answer that honestly. If you add AI-generated images from `AI-IMAGE-PROMPTS.md`, also answer **yes** for images. The two membrane-transport pictures you uploaded (`src/img/`, used for the transport chart page and Labeling Worksheet 5) look AI-generated; if they are, answer **yes** for images. KDP requires the disclosure, and it isn't shown to customers.
 2. **Trademark.** "AP" and "Advanced Placement" are College Board trademarks. Using them to describe what the book covers is common practice. The copyright page and back cover include the non-affiliation disclaimer. Do **not** use the College Board logo, and don't call the questions "official."
 3. **Check against the current CED.** The content follows the ten Unit 2 topics (2.1–2.10) of the Course and Exam Description effective Fall 2025. Before publishing, compare them with the College Board's current *AP Biology Course and Exam Description*, and ideally have a biology teacher proofread the book.
 4. **Order a proof copy** (KDP > "Request printed proofs") to check print quality, especially how the 3D illustrations look in grayscale.
@@ -104,4 +107,4 @@ Use the **same title, subtitle, author, description, keywords, and categories** 
 - **Preview:** use KDP's online Kindle Previewer. Check the diagrams, the Organelle Gallery, and the clickable table of contents on both phone and tablet views. Diagrams are in full color in the eBook.
 - **Price:** the 70% royalty applies to list prices from **$2.99 to $9.99** (US). Study guides often sell for **$4.99–$7.99** as eBooks.
 
-**How the eBook differs from the paperback:** text reflows to fit the screen, diagrams are color images, and each Check Your Understanding set links to its answers. Write-in lines, the blank graph grid, and the blank mind map are replaced with instructions to use paper. The Score Tracker asks readers to copy the table into a notebook.
+**How the eBook differs from the paperback:** text reflows to fit the screen, diagrams are color images, and each Check Your Understanding set links to its answers. Write-in lines, the blank graph grids, and the blank mind map are replaced with instructions to use paper. The sideways transport chart appears upright and can be zoomed. The Score Tracker asks readers to copy the table into a notebook.

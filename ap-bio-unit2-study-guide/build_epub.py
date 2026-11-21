@@ -35,6 +35,12 @@ REWORDS = [
      "Copy this table into a notebook and record each attempt. Redo any set"),
     ("Fill in each box from memory, then check your work against the lessons.",
      "Draw it on paper with six branches&mdash;SA:V Ratio, Increasing Surface Area, Heat Exchange, Benefits of Compartments, Endosymbiosis Steps, and Evidence&mdash;then check your work against the lessons."),
+    ("Write on the lines provided, then score yourself",
+     "Write your answers on paper, then score yourself"),
+    ("Construct a graph of the means on the blank axes below.",
+     "Construct a graph of the means on graph paper."),
+    ("<p class=\"small\">Turn the book sideways. This one-page chart",
+     "<p class=\"small\">This chart"),
     ("Check each statement only when you can do it without notes.",
      "Check off each statement (in a notebook) only when you can do it without notes."),
 ]
