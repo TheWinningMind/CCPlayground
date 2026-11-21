@@ -76,6 +76,8 @@ def assemble(toc: dict | None) -> str:
     body = "\n".join(p.read_text() for p in parts)
     body = body.replace("{{AUTHOR}}", html.escape(AUTHOR)).replace("{{YEAR}}", YEAR)
     body = (SRC / "defs.svg").read_text() + swap_ai_images(body)
+    # Photos and raster diagrams live in src/img/; the assembled page is written elsewhere, so use absolute URIs.
+    body = body.replace('src="img/', f'src="{(SRC / "img").resolve().as_uri()}/')
     if toc:
         def fill(m):
             key = html.unescape(m.group(1))
