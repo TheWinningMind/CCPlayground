@@ -69,9 +69,9 @@ sub, sup { font-size: 70%; line-height: 0; }
 
 .toc { break-after: page; }
 .toc ol { list-style: none; padding: 0; margin: 0; }
-.toc li { display: flex; align-items: baseline; font-family: Inter, sans-serif; font-size: 10pt; margin: 0 0 2.4pt; }
-.toc li.part { font-weight: 800; margin-top: 6pt; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
-.toc li.sub { padding-left: 0.3in; font-size: 10pt; color: #222; }
+.toc li { display: flex; align-items: baseline; font-family: Inter, sans-serif; font-size: 9.6pt; margin: 0 0 1.2pt; }
+.toc li.part { font-weight: 800; margin-top: 4pt; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
+.toc li.sub { padding-left: 0.3in; font-size: 9.6pt; color: #222; }
 .toc .dots { flex: 1; border-bottom: 1pt dotted #888; margin: 0 6pt; transform: translateY(-3pt); }
 .toc .pg { font-weight: 700; min-width: 0.3in; text-align: right; }
 
@@ -214,3 +214,22 @@ table.cmp-t { margin: 3pt 0 4pt; font-size: 9pt; table-layout: fixed; }
 table.cmp-t th { width: 50%; text-transform: none; letter-spacing: 0; font-size: 8.4pt; padding: 2.5pt 6pt; }
 table.cmp-t td { padding: 3pt 6pt; }
 table.cmp-t td:first-child { font-weight: normal; border-right: 0.6pt solid var(--rule); }
+
+/* ---------- Free-Response Problem Workbook ---------- */
+.wb-prob h3 { margin: 0.2in 0 0.02in; font-size: 11pt; }
+.wb-prob { break-inside: avoid; }
+.wb-meta { font: 700 7.6pt Inter, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4pt; }
+table.wb-data { width: auto; min-width: 60%; margin: 0.06in 0 0.1in; }
+table.wb-data td, table.wb-data th { padding: 3pt 10pt; }
+table.wb-data th { text-transform: none; letter-spacing: 0.02em; }
+.wb-ans h3 { margin: 0.14in 0 0.04in; font-size: 10.4pt; break-after: avoid; }
+.wb-ans .pts { margin-left: 4pt; }
+.wb-pt { display: inline-block; min-width: 11pt; height: 11pt; border-radius: 50%; background: var(--ink); color: #fff; font: 800 7pt/11pt Inter, sans-serif; text-align: center; margin-left: 3pt; vertical-align: 1pt; }
+.nu { text-transform: none; }
+.stim { border-left: 3pt solid var(--ink); padding: 0.02in 0 0.02in 0.14in; margin: 0.06in 0 0.12in; }
+.stim p { text-align: left; }
+figure.photo img { width: 100%; height: auto; display: block; }
+.plate-page h1 { font-size: 18pt; margin-bottom: 0.06in; }
+.plate-page p { margin-bottom: 0.04in; }
+.plate { position: relative; height: 8.5in; overflow: hidden; }
+.plate img { position: absolute; width: 8.5in; height: auto; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); }
