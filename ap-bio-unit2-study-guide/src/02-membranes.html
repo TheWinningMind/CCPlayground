@@ -1,0 +1,395 @@
+<section class="opener">
+  <div class="num">2.3</div>
+  <div class="eyebrow">TOPIC 2.3</div>
+  <h1>Cell Size</h1>
+
+  <div class="box targets">
+    <div class="label">Learning Targets</div>
+    <ul>
+      <li>Calculate the surface area, volume, and surface area-to-volume ratio of cubes, spheres, and other simple shapes.</li>
+      <li>Explain why the surface area-to-volume ratio limits how large a cell can be.</li>
+      <li>Describe structural adaptations that increase surface area in cells and organisms.</li>
+      <li>Explain how surface area-to-volume ratios affect heat exchange in organisms.</li>
+    </ul>
+  </div>
+
+  <h2>Why Are Cells So Small?</h2>
+  <p>A cell must constantly exchange materials with its surroundings. Oxygen and nutrients come in; carbon dioxide and wastes go out. All of this traffic passes through the <strong>plasma membrane</strong>, so the rate of exchange depends on the cell&rsquo;s <strong>surface area</strong>. Meanwhile, the amount of material the cell needs, and the amount of waste it produces, depends on how much cytoplasm it has to support, which is its <strong>volume</strong>.</p>
+  <p>Here is the problem: as an object gets bigger, its volume grows faster than its surface area. Surface area increases with the <em>square</em> of the length, but volume increases with the <em>cube</em> of the length. So as a cell grows, each unit of membrane must serve more and more cytoplasm. Eventually the membrane cannot bring in materials or remove wastes fast enough, and diffusion inside the cell becomes too slow to reach the center. This is why most cells are microscopic, and why a cell divides rather than growing forever.</p>
+
+  <figure>
+    <svg id="fig2e" viewBox="0 0 640 250" width="590" xmlns="http://www.w3.org/2000/svg">
+      <defs><style>#fig2e .s{font-size:13px}#fig2e .b{font-size:14px;font-weight:800}#fig2e .f{fill:#f2f2f2;stroke:#111;stroke-width:2}#fig2e .tp{fill:#d0d0d0;stroke:#111;stroke-width:2}#fig2e .sd{fill:#a8a8a8;stroke:#111;stroke-width:2}</style></defs>
+      <!-- 1 cm cube: s=30 -->
+      <rect class="f" x="70" y="140" width="30" height="30"/><path class="tp" d="M70,140 l12,-12 h30 l-12,12z"/><path class="sd" d="M100,140 l12,-12 v30 l-12,12z"/>
+      <text class="b" x="90" y="200" text-anchor="middle">1 cm</text>
+      <!-- 2 cm cube: s=60 -->
+      <rect class="f" x="210" y="110" width="60" height="60"/><path class="tp" d="M210,110 l24,-24 h60 l-24,24z"/><path class="sd" d="M270,110 l24,-24 v60 l-24,24z"/>
+      <text class="b" x="250" y="200" text-anchor="middle">2 cm</text>
+      <!-- 4 cm cube: s=120 -->
+      <rect class="f" x="400" y="50" width="120" height="120"/><path class="tp" d="M400,50 l40,-40 h120 l-40,40z"/><path class="sd" d="M520,50 l40,-40 v120 l-40,40z"/>
+      <text class="b" x="470" y="200" text-anchor="middle">4 cm</text>
+      <g class="s" text-anchor="middle">
+        <text x="90" y="222">SA 6 cm&#178; &#183; V 1 cm&#179;</text><text x="90" y="241" font-weight="800">SA:V = 6 : 1</text>
+        <text x="250" y="222">SA 24 cm&#178; &#183; V 8 cm&#179;</text><text x="250" y="241" font-weight="800">SA:V = 3 : 1</text>
+        <text x="470" y="222">SA 96 cm&#178; &#183; V 64 cm&#179;</text><text x="470" y="241" font-weight="800">SA:V = 1.5 : 1</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 2.5</b> Each time the side length of a cube doubles, its surface area increases 4 times but its volume increases 8 times, so the surface area-to-volume ratio is cut in half. The smallest cube has the most membrane per unit of volume.</figcaption>
+  </figure>
+
+  <h2>Calculating Surface Area and Volume</h2>
+  <p>The AP Biology Exam provides a formula sheet with these equations. You must know how to use them.</p>
+  <table>
+    <thead><tr><th style="width:22%">Shape</th><th style="width:28%">Surface area (SA)</th><th style="width:25%">Volume (V)</th><th>SA:V simplifies to</th></tr></thead>
+    <tbody>
+      <tr><td>Cube (side <i>s</i>)</td><td>6<i>s</i><sup>2</sup></td><td><i>s</i><sup>3</sup></td><td>6 / <i>s</i></td></tr>
+      <tr><td>Sphere (radius <i>r</i>)</td><td>4&pi;<i>r</i><sup>2</sup></td><td>(4/3)&pi;<i>r</i><sup>3</sup></td><td>3 / <i>r</i></td></tr>
+      <tr><td>Rectangular solid</td><td>2<i>lw</i> + 2<i>lh</i> + 2<i>wh</i></td><td><i>lwh</i></td><td>&mdash;</td></tr>
+      <tr><td>Cylinder</td><td>2&pi;<i>rh</i> + 2&pi;<i>r</i><sup>2</sup></td><td>&pi;<i>r</i><sup>2</sup><i>h</i></td><td>&mdash;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box math">
+    <div class="label">Worked Example</div>
+    <p><strong>A spherical cell has a radius of 3 &micro;m. Calculate its surface area-to-volume ratio.</strong></p>
+    <p>SA = 4&pi;<i>r</i><sup>2</sup> = 4 &times; 3.14 &times; 3<sup>2</sup> = <strong>113 &micro;m<sup>2</sup></strong>. &nbsp;V = (4/3)&pi;<i>r</i><sup>3</sup> = (4/3) &times; 3.14 &times; 3<sup>3</sup> = <strong>113 &micro;m<sup>3</sup></strong>. &nbsp;SA:V = 113 / 113 = <strong>1 : 1</strong> (shortcut: 3 / <i>r</i> = 3 / 3 = 1).</p>
+    <p>If the radius doubles to 6 &micro;m, SA:V = 3 / 6 = <strong>0.5 : 1</strong>. The bigger cell has only half as much membrane for each cubic micrometer of cytoplasm. More practice is in the Unit 2 Math Toolkit.</p>
+  </div>
+
+  <h2>Adaptations That Increase Surface Area</h2>
+  <p>Cells and organisms that depend on rapid exchange have evolved shapes and structures that increase surface area <em>without</em> greatly increasing volume:</p>
+  <ul>
+    <li><strong>Microvilli</strong> on the cells lining the small intestine are tiny finger-like projections of the plasma membrane that greatly increase the area for absorbing nutrients.</li>
+    <li><strong>Root hair cells</strong> in plants have long, thin extensions that increase the area for absorbing water and minerals.</li>
+    <li><strong>Flattened or elongated shapes</strong>, such as the thin cells lining the alveoli of the lungs or the long, thin axons of neurons, keep every part of the cell close to the membrane. Red blood cells are flattened, biconcave disks, which increases their surface area for gas exchange.</li>
+    <li><strong>Internal membrane folds</strong>, such as mitochondrial cristae and chloroplast thylakoids (Topic 2.2), apply the same principle inside the cell.</li>
+    <li><strong>Organ-level structures</strong>, such as alveoli in lungs, gill filaments in fish, and the villi of the intestine, increase surface area for the whole organism.</li>
+  </ul>
+
+  <h2>Surface Area, Volume, and Heat</h2>
+  <p>The same geometry affects how quickly organisms gain or lose heat. Heat is exchanged across the body surface, but it is produced throughout the body&rsquo;s volume. A small animal such as a shrew has a <strong>high SA:V ratio</strong>, so it loses body heat quickly. To stay warm, it must have a very high metabolic rate per gram of body mass and must eat almost constantly. A large animal such as an elephant has a <strong>low SA:V ratio</strong>, loses heat slowly, and has a much lower metabolic rate per gram. Elephants&rsquo; large, thin ears increase their surface area and help them shed excess heat.</p>
+
+  <div class="box warn">
+    <div class="label">Misconception Alert</div>
+    <p><strong>A bigger cell has more surface area, but a smaller SA:V ratio.</strong> Students often say a large cell exchanges materials poorly because it has &ldquo;less surface area.&rdquo; That is wrong: it has <em>more</em> surface area in absolute terms. The problem is that it has <em>less surface area relative to its volume</em>. Always use the word &ldquo;ratio&rdquo; or say &ldquo;relative to its volume.&rdquo;</p>
+  </div>
+
+  <div class="box tip">
+    <div class="label">Exam Tip</div>
+    <p>A full-credit explanation of cell size has three links: <strong>(1)</strong> as a cell grows, volume increases faster than surface area, <strong>(2)</strong> so the SA:V ratio decreases, <strong>(3)</strong> so the membrane cannot exchange materials (nutrients, O<sub>2</sub>, wastes, or heat) quickly enough to meet the needs of the cell&rsquo;s volume.</p>
+  </div>
+
+  <div class="box">
+    <div class="label">Key Terms</div>
+    <div class="cols">
+      <dl class="vocab">
+        <dt>Surface area (SA)</dt><dd>Total area of an object&rsquo;s outer surface; for a cell, the plasma membrane.</dd>
+        <dt>Volume (V)</dt><dd>The amount of space inside an object; for a cell, its cytoplasm.</dd>
+        <dt>SA:V ratio</dt><dd>Surface area divided by volume; decreases as size increases.</dd>
+      </dl>
+      <dl class="vocab">
+        <dt>Microvilli</dt><dd>Finger-like membrane projections that increase absorptive surface area.</dd>
+        <dt>Root hair</dt><dd>Thin extension of a root epidermal cell that increases absorption.</dd>
+        <dt>Metabolic rate</dt><dd>The rate at which an organism uses energy.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2 class="avoid">Check Your Understanding 2.3</h2>
+  <div class="quiz">
+    <div class="q"><div class="stem">What is the surface area-to-volume ratio of a cube-shaped cell with sides 3 &micro;m long?</div><ol class="ch">
+      <li>0.5 : 1</li><li>2 : 1</li><li>3 : 1</li><li>6 : 1</li></ol></div>
+    <div class="q"><div class="stem">Which of the following cells has the greatest surface area-to-volume ratio?</div><ol class="ch">
+      <li>A cube with sides 20 &micro;m long</li>
+      <li>A sphere with a radius of 4 &micro;m</li>
+      <li>A cube with sides 5 &micro;m long</li>
+      <li>A sphere with a radius of 10 &micro;m</li></ol></div>
+    <div class="q"><div class="stem">The cells that line the small intestine have thousands of microvilli on the surface facing the intestinal cavity. The primary advantage of microvilli is that they</div><ol class="ch">
+      <li>increase the volume of the cell so it can store more nutrients</li>
+      <li>prevent water from leaving the cell by osmosis</li>
+      <li>produce digestive enzymes that are secreted into the intestine</li>
+      <li>increase the membrane surface area available for absorbing nutrients</li></ol></div>
+    <div class="q"><div class="stem">Which of the following best explains why cells divide instead of continuing to grow larger?</div><ol class="ch">
+      <li>As a cell grows, its volume increases faster than its surface area, so the membrane cannot exchange materials fast enough to support the cell.</li>
+      <li>As a cell grows, its surface area increases faster than its volume, so it loses too much water.</li>
+      <li>Large cells cannot contain enough DNA to make ribosomes.</li>
+      <li>Large cells have a higher surface area-to-volume ratio than small cells.</li></ol></div>
+    <div class="q"><div class="stem">Agar cubes containing a pH indicator that turns pink in basic solutions are cut into sizes of 1 cm, 2 cm, and 3 cm on a side. The cubes are soaked in a basic solution for 10 minutes. Which result is expected?</div><ol class="ch">
+      <li>The 3 cm cube will be completely pink, and the 1 cm cube will be mostly clear.</li>
+      <li>The base will diffuse farther into the 3 cm cube than into the 1 cm cube.</li>
+      <li>The 1 cm cube will have the greatest percentage of its volume turn pink.</li>
+      <li>All three cubes will have the same percentage of their volume turn pink.</li></ol></div>
+    <div class="q"><div class="stem">A shrew has a much higher metabolic rate per gram of body mass than an elephant. Which of the following best explains this difference?</div><ol class="ch">
+      <li>The shrew has a lower surface area-to-volume ratio, so it retains heat and must burn more energy to cool down.</li>
+      <li>The shrew has a higher surface area-to-volume ratio, so it loses heat to the environment faster and must produce more heat per gram.</li>
+      <li>The shrew&rsquo;s cells are larger than the elephant&rsquo;s cells.</li>
+      <li>The elephant&rsquo;s cells contain no mitochondria.</li></ol></div>
+  </div>
+</section>
+
+<section class="opener">
+  <div class="num">2.4</div>
+  <div class="eyebrow">TOPIC 2.4</div>
+  <h1>Plasma Membranes</h1>
+
+  <div class="box targets">
+    <div class="label">Learning Targets</div>
+    <ul>
+      <li>Describe the structure of the plasma membrane using the fluid mosaic model.</li>
+      <li>Explain how the amphipathic nature of phospholipids causes them to form a bilayer.</li>
+      <li>Describe how membrane proteins are positioned in the bilayer according to the polarity of their amino acids.</li>
+      <li>Explain the roles of cholesterol, glycoproteins, and glycolipids in membranes.</li>
+    </ul>
+  </div>
+
+  <h2>Phospholipids Build the Bilayer</h2>
+  <p>Recall from Unit 1 that a <strong>phospholipid</strong> has a <strong>hydrophilic</strong> (polar) phosphate head and two <strong>hydrophobic</strong> (nonpolar) fatty acid tails. A molecule with both regions is <strong>amphipathic</strong>. In water, phospholipids spontaneously arrange themselves into a <strong>bilayer</strong>: the hydrophilic heads face the watery environments inside and outside the cell, and the hydrophobic tails point toward each other in the interior, away from water. No energy input is needed; the bilayer forms because of <strong>hydrophobic interactions</strong>.</p>
+
+  <h2>The Fluid Mosaic Model</h2>
+  <p>The accepted model of membrane structure is the <strong>fluid mosaic model</strong>. The membrane is <em>fluid</em> because phospholipids and many proteins are not locked in place; they drift sideways within their layer, much like people moving through a crowd. It is a <em>mosaic</em> because many different kinds of proteins are embedded in or attached to the bilayer, like tiles in a mosaic.</p>
+
+  <figure>
+    <svg id="fig2f" viewBox="0 0 680 330" width="630" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>#fig2f .s{font-size:12.5px}#fig2f .ln{stroke:#111;stroke-width:1.1}</style>
+        <pattern id="pl2f" x="20" y="100" width="16" height="96" patternUnits="userSpaceOnUse">
+          <path d="M5,12 v32 M11,12 v32 M5,52 v32 M11,52 v32" stroke="#111" stroke-width="1.4"/>
+          <circle cx="8" cy="7" r="6" fill="#bdbdbd" stroke="#111" stroke-width="1.2"/>
+          <circle cx="8" cy="89" r="6" fill="#bdbdbd" stroke="#111" stroke-width="1.2"/>
+        </pattern>
+      </defs>
+      <rect x="20" y="100" width="640" height="96" fill="url(#pl2f)"/>
+      <!-- integral (transmembrane) protein -->
+      <path d="M150,88 C120,90 118,210 150,212 L200,212 C230,210 232,90 200,88 Z" fill="#8f8f8f" stroke="#111" stroke-width="2"/>
+      <!-- glycoprotein carbohydrate -->
+      <path d="M175,88 v-22 l-12,-14 M175,66 l12,-14 M163,52 v-14 M187,52 l10,-12 M187,52 v-14" fill="none" stroke="#111" stroke-width="2.2"/>
+      <g fill="#fff" stroke="#111" stroke-width="1.6"><circle cx="175" cy="66" r="4.5"/><circle cx="163" cy="52" r="4.5"/><circle cx="187" cy="52" r="4.5"/><circle cx="163" cy="38" r="4.5"/><circle cx="197" cy="40" r="4.5"/><circle cx="187" cy="38" r="4.5"/></g>
+      <!-- channel protein -->
+      <path d="M330,90 C312,92 312,206 330,208 L352,208 L352,90 Z" fill="#cfcfcf" stroke="#111" stroke-width="2"/>
+      <path d="M372,90 L372,208 L394,208 C412,206 412,92 394,90 Z" fill="#cfcfcf" stroke="#111" stroke-width="2"/>
+      <rect x="352" y="90" width="20" height="118" fill="#fff"/>
+      <circle cx="362" cy="70" r="6" fill="#111"/><path d="M362,80 v15" stroke="#111" stroke-width="1.6"/>
+      <!-- peripheral protein (inner surface) -->
+      <ellipse cx="500" cy="212" rx="34" ry="16" fill="#e2e2e2" stroke="#111" stroke-width="2"/>
+      <!-- glycolipid -->
+      <path d="M560,96 v-20 l-10,-12 M560,76 l10,-12" fill="none" stroke="#111" stroke-width="2.2"/>
+      <g fill="#fff" stroke="#111" stroke-width="1.6"><circle cx="560" cy="76" r="4.5"/><circle cx="550" cy="64" r="4.5"/><circle cx="570" cy="64" r="4.5"/></g>
+      <!-- cholesterol -->
+      <g fill="#111"><rect x="262" y="116" width="7" height="24" rx="2"/><rect x="438" y="158" width="7" height="24" rx="2"/><rect x="610" y="116" width="7" height="24" rx="2"/></g>
+      <!-- cytoskeleton -->
+      <path d="M470,245 q30,15 60,0 t60,0" fill="none" stroke="#777" stroke-width="3" stroke-dasharray="8 4"/>
+      <text class="s" x="25" y="30" font-weight="800">OUTSIDE OF CELL (extracellular fluid)</text>
+      <text class="s" x="25" y="300" font-weight="800">INSIDE OF CELL (cytoplasm)</text>
+      <!-- labels -->
+      <text class="s" x="40" y="60">Glycoprotein</text><line class="ln" x1="122" y1="56" x2="158" y2="52"/>
+      <line class="ln" x1="560" y1="62" x2="590" y2="40"/><text class="s" x="595" y="40">Glycolipid</text>
+      <line class="ln" x1="362" y1="64" x2="400" y2="40"/><text class="s" x="404" y="40">Channel protein</text>
+      <line class="ln" x1="175" y1="212" x2="150" y2="265"/><text class="s" x="85" y="280">Integral (transmembrane) protein</text>
+      <line class="ln" x1="500" y1="228" x2="505" y2="268"/><text class="s" x="470" y="282">Peripheral protein</text>
+      <line class="ln" x1="590" y1="250" x2="620" y2="300"/><text class="s" x="560" y="316">Cytoskeleton fibers</text>
+      <line class="ln" x1="265" y1="128" x2="265" y2="252"/><text class="s" x="268" y="265">Cholesterol</text>
+    </svg>
+    <figcaption><b>Figure 2.6</b> The fluid mosaic model. Phospholipid heads (circles) face the water on both sides; their tails form the hydrophobic interior. Proteins drift within the bilayer. Carbohydrate chains (white beads) are attached only on the outside surface, forming glycoproteins and glycolipids.</figcaption>
+  </figure>
+
+  <h2>Membrane Proteins</h2>
+  <p>Proteins give each membrane its specific functions. They are classified by how they are positioned in the membrane:</p>
+  <ul>
+    <li><strong>Integral proteins</strong> are embedded in the bilayer. Most are <strong>transmembrane proteins</strong> that span the entire membrane. The region inside the bilayer is made of amino acids with <strong>nonpolar (hydrophobic) R groups</strong>, often coiled into &alpha; helices, which interact favorably with the fatty acid tails. The regions exposed to water on either side have <strong>polar and charged (hydrophilic) R groups</strong>. This is a perfect example of structure determining position.</li>
+    <li><strong>Peripheral proteins</strong> are not embedded in the bilayer. They are loosely bound to the surface of the membrane, often attached to the exposed parts of integral proteins or to the polar heads of phospholipids.</li>
+  </ul>
+  <p>Membrane proteins carry out at least six major functions: <strong>transport</strong> (channels, carriers, and pumps), <strong>enzymatic activity</strong>, <strong>signal transduction</strong> (receptors that bind signaling molecules), <strong>cell&ndash;cell recognition</strong>, <strong>intercellular joining</strong> (junctions between neighboring cells), and <strong>attachment</strong> to the cytoskeleton and extracellular matrix.</p>
+
+  <h2>Cholesterol and Membrane Fluidity</h2>
+  <p>A membrane must stay fluid to work properly: if it becomes too stiff, proteins cannot move or change shape; if it becomes too fluid, it leaks. Several factors affect fluidity:</p>
+  <ul>
+    <li><strong>Temperature.</strong> As temperature drops, phospholipids move more slowly and pack more tightly, so the membrane becomes more rigid.</li>
+    <li><strong>Fatty acid saturation.</strong> Unsaturated fatty acid tails have kinks from cis double bonds that prevent tight packing, so they keep membranes more fluid at low temperatures.</li>
+    <li><strong>Cholesterol.</strong> In animal cell membranes, cholesterol is wedged between phospholipids. It acts as a <strong>fluidity buffer</strong>: at moderate to high temperatures it restrains phospholipid movement and reduces fluidity, and at low temperatures it keeps phospholipids from packing tightly, which prevents the membrane from solidifying.</li>
+  </ul>
+
+  <h2>Glycoproteins and Glycolipids</h2>
+  <p>Short carbohydrate chains are attached to some membrane proteins (<strong>glycoproteins</strong>) and lipids (<strong>glycolipids</strong>) on the <em>outside</em> surface of the plasma membrane. These carbohydrates vary from species to species, individual to individual, and cell type to cell type, so they serve as identification tags for <strong>cell&ndash;cell recognition</strong>. For example, the A, B, and O human blood types are determined by differences in the carbohydrate chains on the surface of red blood cells, and immune cells use surface molecules to tell the body&rsquo;s own cells from foreign ones.</p>
+
+  <div class="box warn">
+    <div class="label">Misconception Alert</div>
+    <p><strong>&ldquo;Fluid&rdquo; does not mean the membrane is liquid or flows away.</strong> The bilayer is held together by hydrophobic interactions. Individual molecules move <em>sideways</em> within their own layer quickly, but they rarely flip from one layer to the other, because that would require dragging a hydrophilic head through the hydrophobic interior.</p>
+  </div>
+
+  <div class="box tip">
+    <div class="label">Exam Tip</div>
+    <p>If you are asked to predict which part of a transmembrane protein contains nonpolar amino acids, choose the region that sits in the <strong>middle of the bilayer</strong>. If a question gives you a hydropathy plot (a graph of how hydrophobic each part of a protein is), the long hydrophobic stretches of about 20 amino acids are the membrane-spanning regions.</p>
+  </div>
+
+  <div class="box">
+    <div class="label">Key Terms</div>
+    <div class="cols">
+      <dl class="vocab">
+        <dt>Amphipathic</dt><dd>Having both hydrophilic and hydrophobic regions.</dd>
+        <dt>Phospholipid bilayer</dt><dd>Double layer of phospholipids with tails facing inward.</dd>
+        <dt>Fluid mosaic model</dt><dd>A membrane is a fluid bilayer with a mosaic of proteins embedded in it.</dd>
+        <dt>Integral protein</dt><dd>A protein embedded in the bilayer; transmembrane proteins span it.</dd>
+      </dl>
+      <dl class="vocab">
+        <dt>Peripheral protein</dt><dd>A protein loosely bound to the membrane surface.</dd>
+        <dt>Cholesterol</dt><dd>Steroid in animal membranes that buffers fluidity.</dd>
+        <dt>Glycoprotein</dt><dd>Membrane protein with an attached carbohydrate chain.</dd>
+        <dt>Glycolipid</dt><dd>Membrane lipid with an attached carbohydrate chain.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2 class="avoid">Check Your Understanding 2.4</h2>
+  <div class="quiz">
+    <div class="q"><div class="stem">Which statement best describes how phospholipids are arranged in a plasma membrane?</div><ol class="ch">
+      <li>Two layers, with the hydrophobic tails facing each other in the interior and the hydrophilic heads facing the water on each side</li>
+      <li>Two layers, with the hydrophilic heads facing each other in the interior and the tails facing the water on each side</li>
+      <li>A single layer, with the heads facing the cytoplasm</li>
+      <li>A single layer of tails covered on both sides by proteins</li></ol></div>
+    <div class="q"><div class="stem">A transmembrane protein spans the phospholipid bilayer. The amino acids in the part of the protein that lies within the interior of the bilayer most likely have R groups that are</div><ol class="ch">
+      <li>positively charged</li><li>negatively charged</li><li>nonpolar</li><li>polar and uncharged</li></ol></div>
+    <div class="q"><div class="stem">Which of the following best describes the role of cholesterol in animal cell membranes?</div><ol class="ch">
+      <li>It forms channels that allow ions to cross the membrane.</li>
+      <li>It reduces membrane fluidity at moderate temperatures and prevents the membrane from becoming rigid at low temperatures.</li>
+      <li>It serves as a receptor for signaling molecules.</li>
+      <li>It attaches carbohydrate chains to the outer surface of the membrane.</li></ol></div>
+    <div class="q"><div class="stem">Immune cells can distinguish the body&rsquo;s own cells from foreign cells. Which membrane component is most directly responsible for this recognition?</div><ol class="ch">
+      <li>Phospholipid tails</li><li>Cholesterol</li><li>Peripheral proteins on the cytoplasmic side</li><li>Glycoproteins on the outer surface</li></ol></div>
+    <div class="q"><div class="stem">In a classic experiment, the membrane proteins of a mouse cell were labeled with a green marker and those of a human cell with a red marker. The cells were fused. After 40 minutes at 37&deg;C, the green and red markers were evenly mixed across the hybrid cell&rsquo;s surface. These results best support which claim?</div><ol class="ch">
+      <li>Membrane proteins can move laterally within the bilayer.</li>
+      <li>Membrane proteins are held in fixed positions by the cell wall.</li>
+      <li>Phospholipids frequently flip from one layer to the other.</li>
+      <li>Human and mouse membrane proteins have identical amino acid sequences.</li></ol></div>
+    <div class="q"><div class="stem">Which of the following correctly distinguishes peripheral proteins from integral proteins?</div><ol class="ch">
+      <li>Peripheral proteins span the entire membrane, while integral proteins do not.</li>
+      <li>Peripheral proteins are found only in prokaryotic membranes.</li>
+      <li>Peripheral proteins are made of lipids, while integral proteins are made of amino acids.</li>
+      <li>Peripheral proteins are loosely bound to the membrane surface and do not extend into the hydrophobic interior.</li></ol></div>
+  </div>
+</section>
+
+<section class="opener">
+  <div class="num">2.5</div>
+  <div class="eyebrow">TOPIC 2.5</div>
+  <h1>Membrane Permeability</h1>
+
+  <div class="box targets">
+    <div class="label">Learning Targets</div>
+    <ul>
+      <li>Explain why the plasma membrane is selectively permeable.</li>
+      <li>Predict whether a molecule can cross the phospholipid bilayer directly, based on its size and polarity.</li>
+      <li>Explain why ions and large polar molecules require transport proteins.</li>
+      <li>Describe the structure and function of cell walls in plants, fungi, and prokaryotes.</li>
+    </ul>
+  </div>
+
+  <h2>Selective Permeability</h2>
+  <p>The plasma membrane is <strong>selectively permeable</strong>: it lets some substances cross easily, slows others, and blocks others completely unless a transport protein helps. This allows the cell to keep its internal environment different from the outside. Whether a molecule can cross the bilayer on its own depends mainly on two features: its <strong>polarity (or charge)</strong> and its <strong>size</strong>. The interior of the bilayer is <em>hydrophobic</em>, so it is a barrier to anything that is charged or strongly polar.</p>
+
+  <figure>
+    <svg id="fig2g" viewBox="0 0 660 270" width="610" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>#fig2g .s{font-size:12.5px}#fig2g .b{font-size:13px;font-weight:800}</style>
+        <pattern id="pl2g" x="0" y="105" width="14" height="70" patternUnits="userSpaceOnUse">
+          <path d="M4,10 v22 M10,10 v22 M4,38 v22 M10,38 v22" stroke="#555" stroke-width="1.2"/>
+          <circle cx="7" cy="5" r="5" fill="#cfcfcf" stroke="#111" stroke-width="1"/><circle cx="7" cy="65" r="5" fill="#cfcfcf" stroke="#111" stroke-width="1"/>
+        </pattern>
+        <marker id="ar2g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#111"/></marker>
+      </defs>
+      <rect x="0" y="105" width="660" height="70" fill="url(#pl2g)"/>
+      <g stroke="#111" stroke-width="2.4" fill="none" marker-end="url(#ar2g)">
+        <path d="M80,70 V215"/><path d="M230,70 V215"/>
+        <path d="M380,70 C380,130 395,150 395,215" stroke-dasharray="6 5"/>
+        <path d="M520,70 V112 Q520,124 540,90"/>
+        <path d="M610,70 V112 Q610,124 630,90"/>
+      </g>
+      <g text-anchor="middle">
+        <text class="b" x="80" y="35">Small nonpolar</text><text class="s" x="80" y="53">O&#8322;, CO&#8322;, N&#8322;</text>
+        <text class="b" x="230" y="35">Hydrophobic</text><text class="s" x="230" y="53">steroids, fatty acids</text>
+        <text class="b" x="385" y="35">Small polar</text><text class="s" x="385" y="53">H&#8322;O, ethanol, urea</text>
+        <text class="b" x="520" y="35">Large polar</text><text class="s" x="520" y="53">glucose</text>
+        <text class="b" x="612" y="35">Ions</text><text class="s" x="612" y="53">Na&#8314;, K&#8314;, Cl&#8315;, H&#8314;</text>
+        <text class="b" x="155" y="240">Cross easily</text>
+        <text class="b" x="390" y="240">Cross slowly</text>
+        <text class="b" x="565" y="240">Blocked: need</text><text class="b" x="565" y="256">transport proteins</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 2.7</b> Permeability of a pure phospholipid bilayer (no proteins). Small nonpolar and hydrophobic molecules dissolve in the lipid interior and pass through. Small polar molecules leak through slowly. Large polar molecules and ions of any size are blocked.</figcaption>
+  </figure>
+
+  <h2>What Can Cross, and Why</h2>
+  <table>
+    <thead><tr><th style="width:24%">Type of molecule</th><th style="width:22%">Examples</th><th>Crosses the bilayer directly?</th></tr></thead>
+    <tbody>
+      <tr><td>Small nonpolar</td><td>O<sub>2</sub>, CO<sub>2</sub>, N<sub>2</sub></td><td>Yes, rapidly. They dissolve in the hydrophobic interior.</td></tr>
+      <tr><td>Hydrophobic (lipid-soluble)</td><td>Steroid hormones, fatty acids</td><td>Yes. Even fairly large hydrophobic molecules pass because they are not repelled by the lipid tails.</td></tr>
+      <tr><td>Small polar, uncharged</td><td>H<sub>2</sub>O, ethanol, glycerol, urea</td><td>Slowly. Cells that move a lot of water use <strong>aquaporins</strong> to speed it up.</td></tr>
+      <tr><td>Large polar</td><td>Glucose, sucrose, amino acids</td><td>No (or extremely slowly). They need carrier proteins.</td></tr>
+      <tr><td>Ions (charged)</td><td>Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Cl<sup>&minus;</sup>, H<sup>+</sup></td><td>No. A charge, plus the hydration shell of water around it, cannot pass through the hydrophobic core. They need channels or pumps.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <div class="label">Misconception Alert</div>
+    <p><strong>Small size does not guarantee passage.</strong> A hydrogen ion (H<sup>+</sup>) is tiny, yet it cannot cross the bilayer on its own because it is charged. Polarity and charge matter more than size. Also, a steroid hormone is larger than glucose, but it crosses easily because it is nonpolar.</p>
+  </div>
+
+  <h2>Cell Walls</h2>
+  <p>Plants, fungi, and most prokaryotes have a <strong>cell wall</strong> outside the plasma membrane. The cell wall is a rigid structural boundary that protects the cell, maintains its shape, and keeps it from bursting when water rushes in. Cell walls are made of complex carbohydrates:</p>
+  <ul>
+    <li><strong>Plants:</strong> cellulose</li>
+    <li><strong>Fungi:</strong> chitin</li>
+    <li><strong>Bacteria:</strong> peptidoglycan (a polymer of sugars cross-linked by short peptides)</li>
+  </ul>
+  <p>The cell wall is <strong>porous</strong>. Water, ions, and small molecules pass through it easily, so it does not control what enters the cytoplasm; that is the plasma membrane&rsquo;s job. Cell walls can, however, block very large molecules and pathogens. In plants, channels called <strong>plasmodesmata</strong> pass through the walls of neighboring cells and connect their cytoplasm.</p>
+
+  <div class="box tip">
+    <div class="label">Exam Tip</div>
+    <p>When asked whether a molecule can cross the membrane without help, ask two questions in order: <strong>(1) Is it charged?</strong> If yes, it needs a protein. <strong>(2) Is it nonpolar or small?</strong> If it is nonpolar, it crosses. If it is large and polar, it needs a protein. Justify with the hydrophobic interior of the bilayer.</p>
+  </div>
+
+  <div class="box">
+    <div class="label">Key Terms</div>
+    <div class="cols">
+      <dl class="vocab">
+        <dt>Selective permeability</dt><dd>Allowing some substances to cross a membrane more easily than others.</dd>
+        <dt>Aquaporin</dt><dd>A channel protein that allows water to cross membranes rapidly.</dd>
+        <dt>Cell wall</dt><dd>Rigid, porous layer outside the plasma membrane.</dd>
+      </dl>
+      <dl class="vocab">
+        <dt>Peptidoglycan</dt><dd>Sugar&ndash;peptide polymer of bacterial cell walls.</dd>
+        <dt>Plasmodesmata</dt><dd>Channels through plant cell walls that connect adjacent cells.</dd>
+        <dt>Hydration shell</dt><dd>Layer of water molecules surrounding a dissolved ion.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2 class="avoid">Check Your Understanding 2.5</h2>
+  <div class="quiz">
+    <div class="q"><div class="stem">Which of the following molecules would cross a phospholipid bilayer most rapidly without the help of a protein?</div><ol class="ch">
+      <li>Glucose</li><li>Oxygen (O<sub>2</sub>)</li><li>Sodium ion (Na<sup>+</sup>)</li><li>A small protein</li></ol></div>
+    <div class="q"><div class="stem">Which of the following best explains why potassium ions (K<sup>+</sup>) cannot diffuse directly through the phospholipid bilayer?</div><ol class="ch">
+      <li>Potassium ions are too large to fit between phospholipids.</li>
+      <li>The membrane is impermeable to all substances smaller than glucose.</li>
+      <li>Potassium ions are nonpolar and dissolve in the fatty acid tails.</li>
+      <li>Potassium ions are charged, so they are repelled by the hydrophobic interior of the bilayer.</li></ol></div>
+    <div class="q"><div class="stem">Testosterone is a steroid hormone that enters target cells without passing through a membrane protein. This is possible because testosterone is</div><ol class="ch">
+      <li>nonpolar and can dissolve in the hydrophobic interior of the membrane</li>
+      <li>a small ion that passes between phospholipid heads</li>
+      <li>carried across by aquaporins</li>
+      <li>pumped across using ATP</li></ol></div>
+    <div class="q"><div class="stem">Glucose is required by nearly all cells, yet it crosses an artificial phospholipid bilayer extremely slowly. Which of the following best explains how cells take up glucose?</div><ol class="ch">
+      <li>Glucose dissolves in the fatty acid tails because it is nonpolar.</li>
+      <li>Glucose is broken down into CO<sub>2</sub> before it enters the cell.</li>
+      <li>Glucose is large and polar, so cells use specific carrier proteins to move it across the membrane.</li>
+      <li>Glucose enters only through the cell wall.</li></ol></div>
+    <div class="q"><div class="stem">Researchers measure how quickly four substances cross an artificial membrane made only of phospholipids. Which substance would cross most slowly?</div><ol class="ch">
+      <li>Carbon dioxide (CO<sub>2</sub>)</li><li>Potassium ion (K<sup>+</sup>)</li><li>Oxygen (O<sub>2</sub>)</li><li>A small steroid</li></ol></div>
+    <div class="q"><div class="stem">Which statement correctly compares the cell wall and the plasma membrane of a plant cell?</div><ol class="ch">
+      <li>The cell wall is selectively permeable, while the plasma membrane is freely permeable.</li>
+      <li>Both are made mostly of phospholipids.</li>
+      <li>The cell wall is found inside the plasma membrane.</li>
+      <li>The cell wall is a porous structural layer, while the plasma membrane is selectively permeable and controls what enters the cytoplasm.</li></ol></div>
+  </div>
+</section>
