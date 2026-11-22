@@ -9,7 +9,7 @@
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, with diagrams in full color. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
-| `images/` | Put AI-generated images here. Any slot without an image keeps the built-in 3D illustration. |
+| `images/` | Author-supplied (AI-generated) images that replace built-in figures, named by slot (`fig-2-1.png`, `golgi.png`, ...). Any slot without an image keeps the built-in illustration. `../images-for-editing/` has the full list of figures and slot rules. |
 | `src/` | Editable source (HTML/CSS) for every chapter and the cover. The cover title font, Lilita One, is bundled in `src/fonts/` under the SIL Open Font License, which allows commercial use. `src/defs.svg` holds the shared 3D shading used by all illustrations. |
 | `build.py` | Rebuilds both PDFs: `python3 build.py`. To set the author/publisher name: `GUIDE_AUTHOR="Your Name" python3 build.py`. |
 | `build_epub.py` | Rebuilds the eBook and its cover: `python3 build_epub.py` (run `build.py` first). |
@@ -89,7 +89,7 @@
 
 ## Things to know before publishing
 
-1. **AI-generated content disclosure.** KDP asks whether the text, images, or translations are AI-generated. The text was drafted with AI assistance, so answer that honestly. If you add AI-generated images from `AI-IMAGE-PROMPTS.md`, also answer **yes** for images. KDP requires the disclosure, and it isn't shown to customers.
+1. **AI-generated content disclosure.** KDP asks whether the text, images, or translations are AI-generated. The text was drafted with AI assistance, and the book now includes **AI-generated images** (the labeled cell diagrams, several lesson figures, and organelle cards in `images/`), so answer **yes** for both text and images. KDP requires the disclosure, and it isn't shown to customers. Also check that your image tool's terms allow commercial use in a book you sell.
 2. **Trademark.** "AP" and "Advanced Placement" are College Board trademarks. Using them to describe what the book covers is common practice. The copyright page and back cover include the non-affiliation disclaimer. Do **not** use the College Board logo, and don't call the questions "official."
 3. **Check against the current CED.** The content follows the ten Unit 2 topics (2.1–2.10) of the Course and Exam Description effective Fall 2025. Before publishing, compare them with the College Board's current *AP Biology Course and Exam Description*, and ideally have a biology teacher proofread the book.
 4. **Order a proof copy** (KDP > "Request printed proofs") to check print quality, especially how the 3D illustrations look in grayscale.

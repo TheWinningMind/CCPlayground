@@ -68,7 +68,7 @@ def swap_ai_images(body: str, src_for=lambda p: p.resolve().as_uri()) -> str:
         if not p:
             return m.group(0)
         return f'{m.group(1)}<img src="{src_for(p)}" alt="{html.escape(alt)}"></div>'
-    return re.sub(r'(<div class="art" data-ai="([\w-]+)"(?: data-alt="([^"]*)")?>)\s*<svg.*?</svg>\s*</div>', repl, body, flags=re.S)
+    return re.sub(r'(<div class="art[^"]*" data-ai="([\w-]+)"(?: data-alt="([^"]*)")?>)\s*<svg.*?</svg>\s*</div>', repl, body, flags=re.S)
 
 
 def assemble(toc: dict | None) -> str:

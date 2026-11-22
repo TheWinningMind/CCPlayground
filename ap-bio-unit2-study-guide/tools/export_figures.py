@@ -35,7 +35,7 @@ for f in sorted(p for p in SRC.glob("*.html") if p.name[0].isdigit() and p.name 
         art = svg.find_parent("div", class_="art")
         fig = svg.find_parent("figure")
         cap = fig.find("figcaption").get_text(" ", strip=True) if fig and fig.find("figcaption") else ""
-        if art and art.get("data-ai"):
+        if art and art.get("data-ai") and not art["data-ai"].startswith("fig-"):
             label, desc = f"Organelle-{art['data-ai']}", art.get("data-alt", art["data-ai"])
         elif cap:
             m = re.match(r"(Figure [\w.\-]+)\s*(.*)", cap); label = m.group(1) if m else "Figure"; desc = m.group(2) if m else cap

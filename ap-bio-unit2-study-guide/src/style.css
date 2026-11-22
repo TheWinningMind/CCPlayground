@@ -214,3 +214,7 @@ table.cmp-t { margin: 3pt 0 4pt; font-size: 9pt; table-layout: fixed; }
 table.cmp-t th { width: 50%; text-transform: none; letter-spacing: 0; font-size: 8.4pt; padding: 2.5pt 6pt; }
 table.cmp-t td { padding: 3pt 6pt; }
 table.cmp-t td:first-child { font-weight: normal; border-right: 0.6pt solid var(--rule); }
+
+/* Author-supplied raster versions of lesson figures (see images/ and build.swap_ai_images). */
+figure .art img { width: 100%; height: auto; display: block; margin: 0 auto; }
+figure .art.narrow img { max-width: 5.2in; }

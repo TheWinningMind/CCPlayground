@@ -152,6 +152,16 @@ def rasterize_figures(soup) -> list[str]:
     env = dict(os.environ)
     env.setdefault("PW_PATH", "/opt/node-tools/node_modules/playwright")
     subprocess.run(["node", str(js), str(jobs_file)], check=True, env=env)
+    # Shaded 3D drawings make large PNGs; store those as JPEG to keep Kindle delivery fees down.
+    from PIL import Image
+    for k, name in enumerate(names):
+        path = img_dir / name
+        if path.stat().st_size > 200_000:
+            jpg = name[:-4] + ".jpg"
+            Image.open(path).convert("RGB").save(img_dir / jpg, "JPEG", quality=82, optimize=True, progressive=True)
+            path.unlink()
+            soup.find("img", src=f"images/{name}")["src"] = f"images/{jpg}"
+            names[k] = jpg
     return names
 
 
@@ -167,9 +177,9 @@ def copy_raster_images(soup) -> list[str]:
         name = "r-" + re.sub(r"[^A-Za-z0-9]+", "-", src.stem).strip("-").lower() + ".jpg"
         if name not in names.values():
             im = Image.open(src).convert("RGB")
-            if im.width > 1600:
-                im = im.resize((1600, round(im.height * 1600 / im.width)), Image.LANCZOS)
-            im.save(WORK / "OEBPS" / "images" / name, "JPEG", quality=82, optimize=True)
+            if im.width > 1300:
+                im = im.resize((1300, round(im.height * 1300 / im.width)), Image.LANCZOS)
+            im.save(WORK / "OEBPS" / "images" / name, "JPEG", quality=78, optimize=True, progressive=True)
             names[src] = name
         img["src"] = "images/" + name
     return sorted(set(names.values()))
@@ -178,11 +188,18 @@ def copy_raster_images(soup) -> list[str]:
 def copy_ai_images(soup) -> list[str]:
     """Copy author-supplied AI images (already swapped into the HTML) into the eBook."""
     from build import IMAGES
+    from PIL import Image
     names = []
     for img in soup.find_all("img", src=re.compile("^" + re.escape(AI_PREFIX))):
-        name = img["src"][len("images/"):]
-        (WORK / "OEBPS" / "images" / name).write_bytes((IMAGES / name[len("ai-"):]).read_bytes())
-        names.append(name)
+        src = IMAGES / img["src"][len(AI_PREFIX):]
+        name = "ai-" + src.stem + ".jpg"  # recompressed: Kindle charges a delivery fee per megabyte
+        if name not in names:
+            im = Image.open(src).convert("RGB")
+            if im.width > 1300:
+                im = im.resize((1300, round(im.height * 1300 / im.width)), Image.LANCZOS)
+            im.save(WORK / "OEBPS" / "images" / name, "JPEG", quality=78, optimize=True, progressive=True)
+            names.append(name)
+        img["src"] = "images/" + name
     return names
 
 
@@ -358,9 +375,9 @@ def build():
         '<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>',
     ]
     manifest += [f'<item id="{f[:-6]}" href="{f}" media-type="application/xhtml+xml"/>' for f, *_ in chapters]
-    manifest += [f'<item id="img-{i[:-4]}" href="images/{i}" media-type="image/png"/>' for i in images]
+    manifest += [f'<item id="img-{i[:-4]}" href="images/{i}" media-type="{"image/png" if i.endswith(".png") else "image/jpeg"}"/>' for i in images]
     manifest += [f'<item id="{i.rsplit(".", 1)[0]}" href="images/{i}" '
-                 f'media-type="{"image/png" if i.endswith(".png") else "image/jpeg"}"/>' for i in ai_images]
+                 f'media-type="image/jpeg"/>' for i in ai_images]
     manifest += [f'<item id="{i.rsplit(".", 1)[0]}" href="images/{i}" media-type="image/jpeg"/>' for i in raster_images]
     spine = ['<itemref idref="cover" linear="no"/>'] + [f'<itemref idref="{f[:-6]}"/>' for f, *_ in chapters]
     spine.insert(3, '<itemref idref="nav"/>')  # contents after title and copyright
