@@ -44,9 +44,9 @@ Prompts are in `ap-bio-unit2-study-guide/AI-IMAGE-PROMPTS.md`.
 
 | # | Save as | Image | Must show |
 |---|---|---|---|
-| C1 | `nucleus.png` | Nucleus card | Double membrane with pores, nucleolus, chromatin |
-| C2 | `rough-er.png` | Rough ER card | Flattened stacked sacs covered in ribosomes |
-| C3 | `mitochondrion.png` | Mitochondrion card | Smooth outer membrane, folded inner membrane (cristae), matrix |
+| ~~C1~~ ✅ | `nucleus.png` | Nucleus card | Double membrane with pores, nucleolus, chromatin |
+| ~~C2~~ ✅ | `rough-er.png` | Rough ER card | Flattened stacked sacs covered in ribosomes |
+| ~~C3~~ ✅ | `mitochondrion.png` | Mitochondrion card | Smooth outer membrane, folded inner membrane (cristae), matrix |
 | C4 | `cover-cell.jpg` or `.png` | Front-cover cell | Cutaway **animal** cell (no cell wall, no chloroplasts, no big vacuole) on a plain warm-peach background (#ffe6d6); at least 2,400 px wide |
 | C5 | *(optional)* `mindmap-01.png` … `mindmap-10.png` | Your 10 mind maps | Renumbered headings; see the table in `README-HOW-TO-EDIT.md`. At least 2,500 × 3,500 px. |
 
