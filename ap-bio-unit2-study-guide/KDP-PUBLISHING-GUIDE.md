@@ -69,6 +69,8 @@
 >
 > Ideal for students taking AP Biology, for summer preparation, and for review before unit tests and the AP Exam.
 >
+> For more practice, the companion *AP Biology Unit 2: Cell Structure and Function Practice Workbook* follows the same ten topics with 430 multiple-choice questions, 54 free-response questions, and 72 data and calculation problems, all with full explanations.
+>
 > *AP® is a registered trademark of the College Board, which is not affiliated with, and does not endorse, this product.*
 
 **Keywords (7 slots):**
