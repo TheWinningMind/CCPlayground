@@ -417,16 +417,20 @@ def build():
 
 def make_cover_jpg():
     """KDP eBook cover: front panel of the print cover, 2560 px tall, RGB JPEG."""
+    from PIL import Image
     pdf = pypdfium2.PdfDocument(OUT / "AP-Biology-Unit-2-Study-Guide-Cover.pdf")
     page = pdf[0]
     w_in = page.get_width() / 72
     spine = w_in - 2 * BLEED - 2 * TRIM_W
-    scale = 2560 / (TRIM_H * 72)
+    # Render at twice the final size and scale down: text edges and fine lines come out crisper.
+    scale = 2 * 2560 / (TRIM_H * 72)
     img = page.render(scale=scale).to_pil().convert("RGB")
     px = img.width / w_in
     left = (BLEED + TRIM_W + spine) * px
     box = (round(left), round(BLEED * px), round(left + TRIM_W * px), round((BLEED + TRIM_H) * px))
-    img.crop(box).save(COVER_JPG, "JPEG", quality=92)
+    front = img.crop(box)
+    front = front.resize((round(front.width * 2560 / front.height), 2560), Image.LANCZOS)
+    front.save(COVER_JPG, "JPEG", quality=95, subsampling=0)
 
 
 if __name__ == "__main__":
