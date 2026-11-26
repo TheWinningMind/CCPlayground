@@ -218,3 +218,11 @@ table.cmp-t td:first-child { font-weight: normal; border-right: 0.6pt solid var(
 /* Author-supplied raster versions of lesson figures (see images/ and build.swap_ai_images). */
 figure .art img { width: 100%; height: auto; display: block; margin: 0 auto; }
 figure .art.narrow img { max-width: 5.2in; }
+
+/* ---------- Author's topic mind maps (full-page images) ---------- */
+.mmpage { break-before: page; }
+figure.fullmap { margin: 0; text-align: center; }
+figure.fullmap img { display: block; margin: 0 auto; max-width: 100%; max-height: 9.05in; width: auto; height: auto; }
+figure.fullmap.first img { max-height: 7.75in; }
+figure.fullmap.wide img { width: 100%; max-height: none; }
+figure.fullmap figcaption { text-align: center; margin-top: 4pt; }
