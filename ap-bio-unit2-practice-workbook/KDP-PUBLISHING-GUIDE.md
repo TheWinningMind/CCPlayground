@@ -43,9 +43,11 @@
 
 ## Listing details (copy and paste)
 
-**Title:** AP Biology Unit 2: Cell Structure and Function
+**Title:** AP Biology Unit 2 Practice Workbook: Cell Structure and Function
 
-**Subtitle:** Practice Workbook with 430 Multiple-Choice Questions, 54 Free-Response Questions, 72 Data and Calculation Problems, and Full Answer Explanations
+**Subtitle:** 430 Multiple-Choice Questions, 54 Free-Response Questions, 72 Data and Calculation Problems, and Full Answer Explanations
+
+> Use a title that differs from the study guide's. KDP links a paperback to its Kindle edition by matching title and author, so two paperbacks with the same title could get the study guide's Kindle edition attached to the wrong book.
 
 **Series:** add it to the same series as the Unit 1 book and the Unit 2 study guide (for example "AP Biology Comprehensive Study Guides"), so Amazon shows them together.
 
