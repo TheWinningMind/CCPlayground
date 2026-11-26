@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cover</title>
+<style>
+  /* Lilita One: SIL Open Font License 1.1 (see fonts/OFL.txt). Bundled so the cover builds offline and embeds in the PDF. */
+  @font-face { font-family: "Lilita One"; src: url("{{FONTS}}/LilitaOne-Regular.ttf") format("truetype"); }
+  /* Inter (SIL Open Font License 1.1, see fonts/OFL-Inter.txt), converted to TrueType so it embeds as a regular font. */
+  @font-face { font-family: "Inter"; font-weight: 400; src: url("{{FONTS}}/Inter-Regular.ttf") format("truetype"); }
+  @font-face { font-family: "Inter"; font-weight: 500; src: url("{{FONTS}}/Inter-Medium.ttf") format("truetype"); }
+  @font-face { font-family: "Inter"; font-weight: 600; src: url("{{FONTS}}/Inter-SemiBold.ttf") format("truetype"); }
+  @font-face { font-family: "Inter"; font-weight: 700; src: url("{{FONTS}}/Inter-Bold.ttf") format("truetype"); }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("{{FONTS}}/Inter-ExtraBold.ttf") format("truetype"); }
+  @page { size: {{W}}in {{H}}in; margin: 0; }
+  :root { --night: #120c33; --night2: #1f1452; --lav: #cbbcff; --pink: #ff5fa2; --gold: #ffc94d; --cyan: #4fd8f0; --ink: #f4f0ff; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: {{W}}in; height: {{H}}in; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { position: relative; overflow: hidden; font-family: Inter, sans-serif; color: var(--ink); background: var(--night); }
+  .panel { position: absolute; top: 0; height: {{H}}in; overflow: hidden; }
+  /* Each panel holds an 8.5 x 11 in "trim" box; the bleed lies outside it. */
+  .trim { position: absolute; top: {{BLEED}}in; width: {{TRIM_W}}in; height: 11in; }
+
+  /* ---------- FRONT ---------- */
+  .front { right: 0; width: calc({{BLEED}}in + {{TRIM_W}}in);
+           background: radial-gradient(ellipse 70% 45% at 50% 58%, #3a2380 0%, rgba(58,35,128,0) 70%),
+                       radial-gradient(circle at 85% 8%, #5b1f6e 0%, rgba(91,31,110,0) 35%),
+                       radial-gradient(circle at 5% 95%, #12406b 0%, rgba(18,64,107,0) 40%),
+                       linear-gradient(180deg, #160e3d 0%, #1d1250 50%, #120c33 100%); }
+  .front .trim { left: 0; }
+  .front svg.layer { position: absolute; left: 0; top: 0; width: 8.5in; height: 11in; overflow: visible; }
+
+  .kicker { position: absolute; top: 0.52in; left: 0; right: 0; text-align: center; }
+  .kicker span { display: inline-block; font: 800 12.5pt Inter; letter-spacing: 0.38em; color: var(--gold);
+                 border: 1.5pt solid var(--gold); border-radius: 0.3in; padding: 0.05in 0.16in 0.05in 0.22in; }
+  .t2 { position: absolute; top: 2.36in; left: 0; right: 0; text-align: center; font: 400 41pt/1 "Lilita One"; color: #fff; letter-spacing: 0.01em;
+        text-shadow: 0 0.04in 0.12in rgba(0,0,0,0.45); }
+  .sub { position: absolute; top: 3.08in; left: 0.9in; right: 0.9in; text-align: center; font: 500 12.5pt/1.4 Inter; color: var(--lav); }
+  .sub b { color: #fff; font-weight: 800; }
+
+  .img { position: absolute; display: block; }
+  .animal { left: 2.1in; top: 4.27in; width: 4.3in; filter: drop-shadow(0 0.08in 0.2in rgba(0,0,0,0.55)); }
+  .bact { left: 6.45in; top: 4.3in; width: 1.55in; transform: rotate(-8deg); filter: drop-shadow(0 0.05in 0.1in rgba(0,0,0,0.5)); }
+  .plant { left: 0.62in; top: 7.95in; width: 1.62in; filter: drop-shadow(0 0.05in 0.1in rgba(0,0,0,0.5)); }
+
+  .author { position: absolute; top: 9.42in; left: 0; right: 0; text-align: center; font: 400 27pt "Lilita One"; letter-spacing: 0.12em; color: #fff; }
+  .author::before, .author::after { content: ""; display: inline-block; width: 0.42in; height: 2pt; background: var(--gold); vertical-align: middle; margin: 0 0.18in 0.06in; }
+  .badges { position: absolute; left: 0.45in; right: 0.45in; bottom: 0.48in; display: flex; justify-content: center; gap: 0.1in; white-space: nowrap; }
+  .badges div { font: 700 10pt/1.2 Inter; color: #fff; background: rgba(255,255,255,0.09); padding: 0.09in 0.15in; border-left: 4.5pt solid var(--gold);
+                border-radius: 0.05in; }
+  .badges div:nth-child(2) { border-left-color: var(--pink); }
+  .badges div:nth-child(3) { border-left-color: var(--cyan); }
+
+  /* ---------- SPINE ---------- */
+  .spine { left: calc({{BLEED}}in + {{TRIM_W}}in); width: {{SPINE}}in; background: linear-gradient(90deg, #0d0828, #1d1250 50%, #0d0828); }
+  .spine-text { display: none; display: {{SPINE_TEXT}}; position: absolute; top: 50%; left: 50%; width: 10.2in; transform: translate(-50%, -50%) rotate(90deg); }
+  .spine-text div { display: flex; justify-content: space-between; align-items: center; white-space: nowrap; font: 400 12pt "Lilita One"; letter-spacing: 0.06em; color: #fff; }
+  .spine-text .u { color: var(--gold); }
+  .spine-text .a { font: 700 8.5pt Inter; letter-spacing: 0.16em; color: var(--lav); }
+
+  /* ---------- BACK ---------- */
+  .back { left: 0; width: calc({{BLEED}}in + {{TRIM_W}}in);
+          background: radial-gradient(circle at 15% 10%, #3a1f6e 0%, rgba(58,31,110,0) 40%),
+                      radial-gradient(circle at 90% 60%, #123a66 0%, rgba(18,58,102,0) 40%),
+                      linear-gradient(180deg, #160e3d 0%, #1b1149 55%, #120c33 100%); }
+  .back .trim { left: {{BLEED}}in; padding: 0.62in 0.6in 0.5in 0.6in; }
+  .back h2 { font: 400 25pt/1.12 "Lilita One"; color: #fff; }
+  .back h2 em { font-style: normal; color: var(--gold); }
+  .back p { font: 400 10.8pt/1.5 Inter; color: #e6defc; margin-top: 0.13in; }
+  .look { margin-top: 0.2in; font: 800 9.5pt Inter; letter-spacing: 0.3em; color: var(--gold); }
+  .look::after { content: ""; display: inline-block; width: 1.2in; height: 1pt; background: var(--gold); opacity: 0.6; vertical-align: middle; margin-left: 0.12in; }
+  .pages { position: relative; height: 3.05in; margin-top: 0.12in; }
+  .pg { position: absolute; top: 0.08in; width: 2.05in; }
+  .pg img { display: block; width: 100%; border-radius: 0.03in; box-shadow: 0 0.06in 0.18in rgba(0,0,0,0.55), 0 0 0 1.5pt rgba(255,255,255,0.85); }
+  .pg span { display: block; text-align: center; margin-top: 0.09in; font: 700 9pt Inter; color: #fff; }
+  .pg:nth-child(1) { left: 0.05in; transform: rotate(-4deg); }
+  .pg:nth-child(2) { left: 2.37in; top: 0; }
+  .pg:nth-child(3) { left: 4.7in; transform: rotate(4deg); }
+  .back ul { list-style: none; padding: 0; margin: 0.14in 0 0; columns: 2; column-gap: 0.3in; }
+  .back li { break-inside: avoid; font: 600 9.6pt/1.38 Inter; color: #f4f0ff; padding-left: 0.22in; position: relative; margin-bottom: 0.08in; }
+  .back li::before { content: ""; position: absolute; left: 0; top: 0.045in; width: 0.1in; height: 0.1in; border-radius: 50%; }
+  .back li:nth-child(4n+1)::before { background: var(--pink); }
+  .back li:nth-child(4n+2)::before { background: var(--gold); }
+  .back li:nth-child(4n+3)::before { background: var(--cyan); }
+  .back li:nth-child(4n+4)::before { background: #a98bff; }
+  .back li b { color: #fff; }
+  .ideal { font-style: italic; }
+  .also { position: absolute; left: 0.6in; bottom: 1.0in; width: 5.4in; font: 600 9.5pt/1.5 Inter; color: var(--lav); }
+  .also b { color: var(--gold); }
+  .fine { position: absolute; left: 0.6in; bottom: 0.5in; width: 4.5in; font: 400 7.3pt/1.4 Inter; color: #a99fd0; }
+  /* KDP prints the barcode in the lower-right of the back cover (2" x 1.2"); that area stays empty. */
+</style></head>
+<body>
+  <!-- ======================= BACK ======================= -->
+  <section class="panel back"><div class="trim">
+    <h2>See the cell from the inside out&mdash;<br>and <em>master AP&reg; Biology Unit 2.</em></h2>
+    <p>Unit 2 is where biology becomes cellular. Learn what every organelle does, why cells stay small, how the fluid mosaic membrane controls what enters and leaves, how water moves by osmosis, and how compartments and endosymbiosis shaped the eukaryotic cell. Every idea is explained step by step, then practiced until exam-style questions feel familiar.</p>
+
+    <div class="look">LOOK INSIDE</div>
+    <div class="pages">
+      <div class="pg"><img src="{{SAMPLES}}/sample-1.png" alt=""><span>3D Organelle Gallery</span></div>
+      <div class="pg"><img src="{{SAMPLES}}/sample-2.png" alt=""><span>Step-by-step lessons</span></div>
+      <div class="pg"><img src="{{SAMPLES}}/sample-3.png" alt=""><span>13 one-page mind maps</span></div>
+    </div>
+
+    <ul>
+      <li><b>All ten Unit 2 topics</b> in the current Fall 2025 numbering</li>
+      <li><b>3D Organelle Gallery</b> plus labeled animal, plant, and bacterial cells</li>
+      <li><b>Step-by-step math:</b> SA:V ratios and water potential</li>
+      <li><b>13 mind maps,</b> misconception alerts, and exam tips</li>
+      <li><b>188 multiple-choice questions</b> with full explanations</li>
+      <li><b>Two full practice tests</b> and topic practice sets</li>
+      <li><b>Six free-response questions</b> with scoring guidelines</li>
+      <li><b>101 similarities and differences</b> and master comparison tables</li>
+      <li><b>Three lab investigations</b> and four labeling worksheets</li>
+      <li><b>100 &ldquo;Who Am I?&rdquo; clues,</b> a glossary, and a score tracker</li>
+    </ul>
+    <p class="ideal">Ideal for students enrolled in AP Biology, for summer preparation, and for review before unit tests and the AP Exam.</p>
+    <div class="also">Companion book: <b>AP&reg; Biology Unit 2 Practice Workbook</b><br>430 MCQs, 54 FRQs, and 72 problems, all with explanations<br>Also by David Sreerama: <b>AP&reg; Biology Unit 1: Chemistry of Life</b></div>
+    <div class="fine">AP&reg; and Advanced Placement&reg; are registered trademarks of the College Board, which is not affiliated with, and does not endorse, this product. Interior printed in black and white.</div>
+  </div></section>
+
+  <!-- ======================= SPINE ======================= -->
+  <section class="panel spine"><div class="spine-text"><div>
+    <span>AP&reg; BIOLOGY &nbsp;<span class="u">UNIT 2</span> &nbsp;&middot;&nbsp; CELL STRUCTURE AND FUNCTION</span><span class="a">{{AUTHOR}}</span>
+  </div></div></section>
+
+  <!-- ======================= FRONT ======================= -->
+  <section class="panel front"><div class="trim">
+    <!-- Background layer: star-like particles, microscope field-of-view reticle, lens rings. Units: 1 = 0.01 in. -->
+    <svg class="layer" viewBox="0 0 850 1100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4fd8f0"/><stop offset="0.5" stop-color="#a98bff"/><stop offset="1" stop-color="#ff5fa2"/></linearGradient>
+        <radialGradient id="field" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="0.75" stop-color="#a98bff" stop-opacity="0.07"/><stop offset="1" stop-color="#a98bff" stop-opacity="0"/></radialGradient>
+        <radialGradient id="lens" cx="50%" cy="45%" r="50%"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></radialGradient>
+        <linearGradient id="unit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="0.55" stop-color="#ffb347"/><stop offset="1" stop-color="#ff5fa2"/></linearGradient>
+        <path id="arcMain" d="M 175 640 A 250 250 0 0 1 675 640"/>
+        <path id="arcBact" d="M 616 470 A 106 106 0 0 1 828 470"/>
+        <path id="arcPlant" d="M 30 880 A 112 112 0 0 0 254 880"/>
+        <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+      </defs>
+
+      <!-- Floating vesicles and particles -->
+      <g filter="url(#soft)" opacity="0.55"><circle cx="110" cy="420" r="38" fill="#ff5fa2"/><circle cx="790" cy="760" r="30" fill="#4fd8f0"/><circle cx="760" cy="230" r="26" fill="#a98bff"/><circle cx="70" cy="190" r="22" fill="#4fd8f0"/></g>
+      <g fill="#ffffff"><circle cx="60" cy="90" r="1.6" opacity="0.7"/><circle cx="140" cy="60" r="1.2" opacity="0.5"/><circle cx="780" cy="110" r="1.8" opacity="0.7"/><circle cx="700" cy="60" r="1.2" opacity="0.5"/><circle cx="820" cy="330" r="1.4" opacity="0.6"/><circle cx="40" cy="330" r="1.4" opacity="0.6"/><circle cx="100" cy="660" r="1.5" opacity="0.6"/><circle cx="800" cy="900" r="1.4" opacity="0.6"/><circle cx="290" cy="985" r="1.2" opacity="0.5"/><circle cx="560" cy="1060" r="1.4" opacity="0.5"/><circle cx="660" cy="350" r="1.2" opacity="0.5"/><circle cx="190" cy="330" r="1.2" opacity="0.5"/></g>
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5"><circle cx="745" cy="640" r="9"/><circle cx="70" cy="625" r="7"/><circle cx="330" cy="70" r="6"/><circle cx="530" cy="980" r="8"/></g>
+
+      <!-- Main microscope field of view -->
+      <circle cx="425" cy="640" r="250" fill="url(#field)"/>
+      <circle cx="425" cy="640" r="262" fill="none" stroke="url(#ring)" stroke-width="5"/>
+      <circle cx="425" cy="640" r="274" fill="none" stroke="url(#ring)" stroke-width="1.2" opacity="0.6" stroke-dasharray="2 9"/>
+      <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.6" id="ticks"></g>
+      <text font-family="Inter" font-weight="800" font-size="11" letter-spacing="5" fill="#cbbcff"><textPath href="#arcMain" startOffset="50%" text-anchor="middle">ANIMAL CELL &#183; EUKARYOTE</textPath></text>
+
+      <!-- Prokaryote lens (top right) -->
+      <circle cx="722" cy="485" r="96" fill="url(#lens)" stroke="url(#ring)" stroke-width="3"/>
+      <text font-family="Inter" font-weight="800" font-size="10.5" letter-spacing="4" fill="#4fd8f0"><textPath href="#arcBact" startOffset="50%" text-anchor="middle">PROKARYOTE</textPath></text>
+      <!-- Plant cell lens (bottom left) -->
+      <circle cx="142" cy="872" r="100" fill="url(#lens)" stroke="url(#ring)" stroke-width="3"/>
+      <text font-family="Inter" font-weight="800" font-size="10.5" letter-spacing="4" fill="#7fe08a"><textPath href="#arcPlant" startOffset="50%" text-anchor="middle" side="left">PLANT CELL</textPath></text>
+
+      <!-- Scale bar -->
+      <g transform="translate(600 905)"><rect x="0" y="0" width="90" height="5" rx="2" fill="#ffffff"/><rect x="0" y="0" width="45" height="5" rx="2" fill="#ffc94d"/>
+        <text x="45" y="22" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#cbbcff">10 &#181;m</text></g>
+
+      <!-- Title: UNIT 2 in a warm gradient -->
+      <text x="425" y="222" text-anchor="middle" font-family="Lilita One" font-size="150" fill="#000" opacity="0.35" dx="5" dy="7">UNIT 2</text>
+      <text x="425" y="222" text-anchor="middle" font-family="Lilita One" font-size="150" fill="url(#unit)">UNIT 2</text>
+    </svg>
+
+    <div class="kicker"><span>AP&reg; BIOLOGY</span></div>
+    <div class="t2">Cell Structure and Function</div>
+    <div class="sub"><b>The Comprehensive Study Guide:</b> lessons, diagrams, practice questions, and full answer explanations</div>
+
+    <img class="img animal" src="{{IMG}}/cover-cell.png" alt="">
+    <img class="img bact" src="{{IMG}}/cover-bacterium.png" alt="">
+    <img class="img plant" src="{{IMG}}/cover-plant.png" alt="">
+
+    <!-- Foreground layer: callouts that point at organelles in the animal cell, and the "updated" seal. -->
+    <svg class="layer" viewBox="0 0 850 1100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round">
+        <polyline points="298,586 230,540 165,540"/>
+        <polyline points="300,690 210,705 160,705"/>
+        <polyline points="503,520 590,590 690,590"/>
+        <polyline points="560,652 640,690 690,690"/>
+        <polyline points="497,766 600,790 690,790"/>
+      </g>
+      <g fill="#ffc94d" stroke="#120c33" stroke-width="2">
+        <circle cx="298" cy="586" r="6"/><circle cx="300" cy="690" r="6"/><circle cx="503" cy="520" r="6"/><circle cx="560" cy="652" r="6"/><circle cx="497" cy="766" r="6"/>
+      </g>
+      <g font-family="Inter" font-weight="700" font-size="14" fill="#ffffff">
+        <text x="160" y="545" text-anchor="end">Nucleus</text>
+        <text x="155" y="710" text-anchor="end">Smooth ER</text>
+        <text x="696" y="595">Mitochondrion</text>
+        <text x="696" y="695">Golgi</text>
+        <text x="696" y="795">Lysosome</text>
+      </g>
+      <g font-family="Inter" font-weight="500" font-size="10" fill="#cbbcff">
+        <text x="160" y="560" text-anchor="end">DNA &amp; control</text>
+        <text x="155" y="725" text-anchor="end">lipid synthesis</text>
+        <text x="696" y="610">ATP power</text>
+        <text x="696" y="710">package &amp; ship</text>
+        <text x="696" y="810">recycle &amp; digest</text>
+      </g>
+
+      <!-- "Updated" seal -->
+      <g transform="translate(118 428) rotate(-12)">
+        <circle r="62" fill="#ffc94d"/><circle r="55" fill="none" stroke="#120c33" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <text y="-18" text-anchor="middle" font-family="Inter" font-weight="800" font-size="11" letter-spacing="1.5" fill="#120c33">UPDATED</text>
+        <text y="10" text-anchor="middle" font-family="Lilita One" font-size="27" fill="#120c33">2025</text>
+        <text y="30" text-anchor="middle" font-family="Inter" font-weight="800" font-size="11" letter-spacing="1.5" fill="#120c33">CED</text>
+      </g>
+    </svg>
+
+    <div class="author">{{AUTHOR}}</div>
+    <div class="badges">
+      <div>All 10 topics + 13 mind maps</div>
+      <div>200+ practice questions</div>
+      <div>Free-response practice with scoring guides</div>
+    </div>
+  </div></section>
+
+  <script>
+    // Reticle tick marks around the main field of view.
+    const g = document.getElementById("ticks"), ns = "http://www.w3.org/2000/svg";
+    for (let d = 0; d < 360; d += 6) {
+      if (d > 222 && d < 318) continue;  // keep the top of the ring clear of the subtitle
+      const a = d * Math.PI / 180, r1 = 262, r2 = d % 30 === 0 ? 290 : 280;
+      const l = document.createElementNS(ns, "line");
+      l.setAttribute("x1", 425 + r1 * Math.cos(a)); l.setAttribute("y1", 640 + r1 * Math.sin(a));
+      l.setAttribute("x2", 425 + r2 * Math.cos(a)); l.setAttribute("y2", 640 + r2 * Math.sin(a));
+      g.appendChild(l);
+    }
+  </script>
+</body></html>
