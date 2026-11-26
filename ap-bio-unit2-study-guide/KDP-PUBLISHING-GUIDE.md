@@ -5,7 +5,7 @@
 | File | Use |
 |---|---|
 | `output/AP-Biology-Unit-2-Study-Guide-Interior.pdf` | Upload as the **manuscript** (paperback interior). 169 pages, 8.5" x 11", no bleed, fonts embedded. |
-| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 169 pages on white paper. |
+| `output/AP-Biology-Unit-2-Study-Guide-Cover.pdf` | Upload as the **cover** ("Upload a cover you already have"). Full-color wraparound with 0.125" bleed. The spine is sized for 169 pages on white paper. The front shows the animal, plant, and bacterial cells (`images/cover-cell.png`, `cover-plant.png`, `cover-bacterium.png`); the back's "Look inside" pages are rendered from the interior PDF in grayscale, the way the paperback prints. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle.epub` | Upload as the **Kindle eBook manuscript**. Reflowable EPUB 3, with diagrams in full color. |
 | `output/AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg` | Upload as the **Kindle eBook cover** (front panel of the print cover, 2560 px tall). |
 | `AI-IMAGE-PROMPTS.md` | Prompts and file names for optional AI-generated 3D images (the cover cell and the 14 organelle cards). |
@@ -102,6 +102,7 @@ Use the **same title, subtitle, author, description, keywords, and categories** 
 - **Cover:** `AP-Biology-Unit-2-Study-Guide-Kindle-Cover.jpg`
 - **ISBN:** not required. Leave it blank.
 - **Preview:** use KDP's online Kindle Previewer. Check the diagrams, the Organelle Gallery, and the clickable table of contents on both phone and tablet views. Diagrams are in full color in the eBook.
+- **File size and delivery fee:** the EPUB is about 7.5 MB because it keeps the diagrams and all 13 mind maps in full color. At the 70% royalty, Amazon charges a small delivery fee per sale based on file size (in the US, about $0.15 per MB), so expect roughly $1 per copy. Choose a list price that allows for it, or pick the 35% royalty, which has no delivery fee.
 - **Price:** the 70% royalty applies to list prices from **$2.99 to $9.99** (US). Study guides often sell for **$4.99–$7.99** as eBooks.
 
 **How the eBook differs from the paperback:** text reflows to fit the screen, diagrams are color images, and each Check Your Understanding set links to its answers. Write-in lines, the blank graph grid, and the blank mind map are replaced with instructions to use paper. The Score Tracker asks readers to copy the table into a notebook.

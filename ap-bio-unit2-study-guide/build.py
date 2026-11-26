@@ -131,7 +131,32 @@ def build_interior() -> int:
     return n
 
 
+# Back-cover "Look inside" thumbnails: (caption, text that identifies the page, page offset from it).
+SAMPLE_PAGES = [
+    ("3D Organelle Gallery", "The 3D Organelle Gallery", 1),
+    ("Step-by-step lessons", "Figure 2.10", 0),
+    ("13 one-page mind maps", "Topic Mind Maps", 1),
+]
+
+
+def render_samples() -> None:
+    """Render the back-cover sample pages from the interior PDF, in grayscale like the printed book."""
+    import pypdfium2
+    pdf_path = OUT / "AP-Biology-Unit-2-Study-Guide-Interior.pdf"
+    doc = pypdfium2.PdfDocument(pdf_path)
+    texts = [pg.get_textpage().get_text_range().replace("\r\n", "\n") for pg in doc]
+    for n, (_, needle, offset) in enumerate(SAMPLE_PAGES, 1):
+        # Prefer a heading at the start of a line; fall back to the text anywhere on the page.
+        line = re.compile(r"(^|\n)" + r"\s+".join(map(re.escape, needle.split())) + r"\s*(\n|$)")
+        hits = [i for i, t in enumerate(texts) if i >= 3 and line.search(t)] or \
+               [i for i, t in enumerate(texts) if i >= 3 and needle in t]
+        idx = hits[0] + offset
+        img = doc[idx].render(scale=200 / 72).to_pil().convert("L").convert("RGB")
+        img.save(BUILD / f"sample-{n}.png")
+
+
 def build_cover(pages: int) -> None:
+    render_samples()
     spine = pages * SPINE_PER_PAGE_IN
     width = BLEED + TRIM_W + spine + TRIM_W + BLEED
     height = BLEED + TRIM_H + BLEED
@@ -140,6 +165,9 @@ def build_cover(pages: int) -> None:
               .replace("{{SPINE}}", f"{spine:.4f}").replace("{{BLEED}}", f"{BLEED}")
               .replace("{{TRIM_W}}", f"{TRIM_W}").replace("{{AUTHOR}}", html.escape(AUTHOR))
               .replace("{{FONTS}}", (SRC / "fonts").resolve().as_uri())
+              .replace("{{IMG}}", IMAGES.resolve().as_uri())
+              .replace("{{SAMPLES}}", BUILD.resolve().as_uri())
+              .replace("{{YEAR}}", YEAR)
               .replace("{{SPINE_TEXT}}", "" if pages < 100 else "block"))
     out = swap_ai_images(out)
     p = BUILD / "cover.html"
