@@ -7,16 +7,16 @@ Every image you send replaces the built-in drawing automatically. Anything not s
 
 ---
 
-## A. Fix and regenerate (4 lesson figures, black and white is fine)
+## A. Fix and regenerate (4 lesson figures) ✅ all done
 
 Start from your earlier version, or from the file in `1-book-figures/`.
 
 | # | Save as | Figure | Problem | Paste this prompt |
 |---|---|---|---|---|
-| A1 | `fig-2-8.png` | Fig 2.8 Four ways across the membrane | In the pump panel, particles move from the crowded side to the sparse side (that's *down* the gradient, not active transport) | *"Keep everything identical, but in the 'Active transport (pump)' panel put five particles ABOVE the membrane and only one BELOW it. Keep the arrow pointing up and the ATP below the membrane."* |
-| A2 | `fig-2-10.png` | Fig 2.10 Tonicity | The isotonic animal cell's arrows point only outward (that means water is leaving) | *"Keep everything identical, but make the four arrows around the ISOTONIC animal cell double-headed (↔) to show no net water movement."* |
-| A3 | `fig-2-11.png` | Fig 2.11 Sodium–potassium pump | Step 4: K⁺ arrows point up into the pump from the cytoplasm (K⁺ should be released *into* the cell) | *"Keep everything identical, but in step 4 reverse the two K⁺ arrows so they point DOWN, out of the pump into the cytoplasm."* |
-| A4 | `fig-2-13.png` | Fig 2.13 Endosymbiosis | Panel 4 shows chloroplasts but no clear mitochondria (plant cells keep their mitochondria) | *"Keep everything identical, but in panel 4 add two mitochondria with folded inner membranes beside the chloroplasts."* |
+| ~~A1~~ ✅ | `fig-2-8.png` | Fig 2.8 Four ways across the membrane | In the pump panel, particles move from the crowded side to the sparse side (that's *down* the gradient, not active transport) | *"Keep everything identical, but in the 'Active transport (pump)' panel put five particles ABOVE the membrane and only one BELOW it. Keep the arrow pointing up and the ATP below the membrane."* |
+| ~~A2~~ ✅ | `fig-2-10.png` | Fig 2.10 Tonicity | The isotonic animal cell's arrows point only outward (that means water is leaving) | *"Keep everything identical, but make the four arrows around the ISOTONIC animal cell double-headed (↔) to show no net water movement."* |
+| ~~A3~~ ✅ | `fig-2-11.png` | Fig 2.11 Sodium–potassium pump | Step 4: K⁺ arrows point up into the pump from the cytoplasm (K⁺ should be released *into* the cell) | *"Keep everything identical, but in step 4 reverse the two K⁺ arrows so they point DOWN, out of the pump into the cytoplasm."* |
+| ~~A4~~ ✅ | `fig-2-13.png` | Fig 2.13 Endosymbiosis | Panel 4 shows chloroplasts but no clear mitochondria (plant cells keep their mitochondria) | *"Keep everything identical, but in panel 4 add two mitochondria with folded inner membranes beside the chloroplasts."* |
 
 ---
 
