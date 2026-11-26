@@ -24,6 +24,10 @@ body { width: var(--sw); height: var(--sh); overflow: hidden; font-family: Inter
 .caption .k { font: 800 22px Inter; letter-spacing: 0.32em; color: #6b5a92; }
 .caption h1 { font: 400 58px/1.05 "Lilita One"; color: #2b1a52; margin-top: 10px; }
 .caption p { font: 600 23px Inter; color: #5a4e78; margin-top: 12px; }
+.feats { position: absolute; left: 60px; right: 60px; display: flex; justify-content: center; gap: 18px; }
+.feats div { flex: 1; background: #fff; border-radius: 18px; padding: 18px 10px; text-align: center; font: 600 22px/1.2 Inter; color: #5a4e78; box-shadow: 0 6px 18px rgba(60,40,110,0.12); }
+.feats b { display: block; font: 400 52px/1 "Lilita One"; color: #2b1a52; margin-bottom: 6px; }
+.cta { position: absolute; left: 50%; transform: translateX(-50%); padding: 22px 48px; border-radius: 60px; background: linear-gradient(90deg, #5b2bb5, #0f7a7a); color: #fff; font: 800 34px Inter; letter-spacing: 0.02em; white-space: nowrap; box-shadow: 0 10px 26px rgba(60,40,110,0.3); }
 </style></head><body>
 <div class="stage" id="stage"></div>
 <script>
@@ -52,6 +56,19 @@ if (mode === 'set') {
   const c = document.createElement('div'); c.className = 'caption'; c.style.top = (H * 0.045) + 'px';
   c.innerHTML = '<div class="k">AP&reg; BIOLOGY &middot; UNIT 2</div><h1>Study Guide + Practice Workbook</h1><p>Lessons, 3D diagrams, 600+ practice questions, and every answer explained</p>';
   stage.appendChild(c);
+} else if (mode === 'story') {
+  // 1080 x 1920 Instagram Story: keep the top and bottom ~250 px clear of key content (profile bar and reply box).
+  const c = document.createElement('div'); c.className = 'caption'; c.style.top = (H * 0.15) + 'px';
+  c.innerHTML = '<div class="k">AP&reg; BIOLOGY &middot; UNIT 2</div><h1 style="font-size:104px">Master Cells</h1><p style="font-size:34px">Study Guide + Practice Workbook</p>';
+  stage.appendChild(c);
+  book('guide', 0.377, W * 0.045, H * 0.34, H * 0.335, 22, -3, 0);
+  book('workbook', 0.68, W * 0.515, H * 0.34, H * 0.335, -22, -3, 0);
+  const f = document.createElement('div'); f.className = 'feats'; f.style.top = (H * 0.725) + 'px';
+  f.innerHTML = '<div><b>10</b>topics</div><div><b>600+</b>practice questions</div><div><b>100%</b>answers explained</div>';
+  stage.appendChild(f);
+  const a = document.createElement('div'); a.className = 'cta'; a.style.top = (H * 0.81) + 'px';
+  a.textContent = 'Available on Amazon';
+  stage.appendChild(a);
 } else {
   book(mode, mode === 'guide' ? 0.377 : 0.68, W * 0.29, H * 0.11, H * 0.74, 30, -5, 0);
 }
