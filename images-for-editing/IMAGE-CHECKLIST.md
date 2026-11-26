@@ -56,7 +56,7 @@ Prompts are in `ap-bio-unit2-study-guide/AI-IMAGE-PROMPTS.md`.
 
 | # | Save as | Image | Note |
 |---|---|---|---|
-| D1 | `smooth-er.png` | Smooth ER (blue tubular network) | You sent it in chat, but the chat copy didn't save on my side |
+| ~~D1~~ ✅ | `smooth-er.png` | Smooth ER (blue tubular network) | You sent it in chat, but the chat copy didn't save on my side |
 | D2 | `central-vacuole.png` | Your unlabeled 3D plant cell | Only if you want it for the central vacuole card instead of B2 |
 
 ### Optional: sharper originals
