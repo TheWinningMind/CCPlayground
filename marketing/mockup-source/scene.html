@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face { font-family: "Lilita One"; src: url("file:///home/user/CCPlayground/ap-bio-unit2-practice-workbook/src/fonts/LilitaOne-Regular.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///home/user/CCPlayground/ap-bio-unit2-practice-workbook/src/fonts/Inter-SemiBold.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("file:///home/user/CCPlayground/ap-bio-unit2-practice-workbook/src/fonts/Inter-ExtraBold.ttf"); }
+* { margin: 0; box-sizing: border-box; }
+body { width: var(--sw); height: var(--sh); overflow: hidden; font-family: Inter, sans-serif;
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, #fdfbff 0%, #eae6f3 55%, #d6d1e4 100%); }
+.stage { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 35%; }
+.floor { position: absolute; left: 0; right: 0; bottom: 0; height: 26%; background: linear-gradient(180deg, rgba(120,110,150,0) 0%, rgba(120,110,150,0.10) 100%); }
+.book { position: absolute; width: var(--w); height: var(--h); transform-style: preserve-3d; }
+.book > div { position: absolute; backface-visibility: hidden; }
+.front { inset: 0; transform: translateZ(calc(var(--t) / 2)); background-size: cover; border-radius: 0 4px 4px 0; }
+.front::after { content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(105deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.16) 46%, rgba(255,255,255,0) 60%),
+              linear-gradient(90deg, rgba(0,0,0,0.28) 0, rgba(0,0,0,0.05) 1.4%, rgba(255,255,255,0.10) 2.6%, rgba(0,0,0,0) 4%); }
+.spine { width: var(--t); height: var(--h); left: calc((var(--w) - var(--t)) / 2); transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); background-size: 100% 100%; }
+.spine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.30), rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.22)); }
+.pages { width: var(--t); height: calc(var(--h) - 6px); top: 3px; left: calc((var(--w) - var(--t)) / 2); transform: rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px));
+  background: repeating-linear-gradient(90deg, #f4f1ea 0 1.2px, #ddd8cd 1.2px 2.2px); }
+.top { width: calc(var(--w) - 3px); height: var(--t); top: calc((var(--h) - var(--t)) / 2); transform: rotateX(90deg) translateZ(calc(var(--h) / 2 - 2px));
+  background: repeating-linear-gradient(0deg, #f7f5ef 0 1.2px, #e2ddd2 1.2px 2.2px); }
+.shadow { position: absolute; border-radius: 50%; filter: blur(22px); background: rgba(40,25,70,0.45); }
+.caption { position: absolute; text-align: center; left: 0; right: 0; }
+.caption .k { font: 800 22px Inter; letter-spacing: 0.32em; color: #6b5a92; }
+.caption h1 { font: 400 58px/1.05 "Lilita One"; color: #2b1a52; margin-top: 10px; }
+.caption p { font: 600 23px Inter; color: #5a4e78; margin-top: 12px; }
+</style></head><body>
+<div class="stage" id="stage"></div>
+<script>
+const P = new URLSearchParams(location.search);
+const W = +P.get('sw'), H = +P.get('sh');
+document.body.style.setProperty('--sw', W + 'px'); document.body.style.setProperty('--sh', H + 'px');
+const stage = document.getElementById('stage');
+function book(name, t, x, y, h, ry, rx, z) {
+  const w = h * 8.5 / 11;
+  const sh = document.createElement('div'); sh.className = 'shadow';
+  Object.assign(sh.style, { left: (x - w * 0.12) + 'px', top: (y + h - h * 0.035) + 'px', width: (w * 1.25) + 'px', height: (h * 0.075) + 'px' });
+  stage.appendChild(sh);
+  const b = document.createElement('div'); b.className = 'book';
+  b.style.setProperty('--w', w + 'px'); b.style.setProperty('--h', h + 'px'); b.style.setProperty('--t', (t / 11 * h) + 'px');
+  Object.assign(b.style, { left: x + 'px', top: y + 'px', transform: `translateZ(${z||0}px) rotateX(${rx}deg) rotateY(${ry}deg)` });
+  b.innerHTML = `<div class="pages"></div><div class="top"></div><div class="spine" style="background-image:url(${name}-spine.jpg)"></div><div class="front" style="background-image:url(${name}-front.jpg)"></div>`;
+  stage.appendChild(b);
+}
+const mode = P.get('mode');
+if (mode === 'set') {
+  book('guide', 0.377, W * 0.13, H * 0.14, H * 0.70, 24, -3, 0);
+  book('workbook', 0.68, W * 0.53, H * 0.14, H * 0.70, -24, -3, 0);
+} else if (mode === 'set-text') {
+  book('guide', 0.377, W * 0.095, H * 0.26, H * 0.55, 22, -3, 0);
+  book('workbook', 0.68, W * 0.525, H * 0.26, H * 0.55, -22, -3, 0);
+  const c = document.createElement('div'); c.className = 'caption'; c.style.top = (H * 0.045) + 'px';
+  c.innerHTML = '<div class="k">AP&reg; BIOLOGY &middot; UNIT 2</div><h1>Study Guide + Practice Workbook</h1><p>Lessons, 3D diagrams, 600+ practice questions, and every answer explained</p>';
+  stage.appendChild(c);
+} else {
+  book(mode, mode === 'guide' ? 0.377 : 0.68, W * 0.29, H * 0.11, H * 0.74, 30, -5, 0);
+}
+</script></body></html>
